@@ -147,7 +147,7 @@ $(function(){
       top: -1 * current_scrollY
     });
   });
-  $("#cboxOverlay, .cbox_close, .cbox_close_2, .modal_img_frame").on('click',function(){
+  $("#cboxOverlay, .cbox_close, .cbox_close_2, .modal_img_frame, .modal_img_frame2").on('click',function(){
     $('body').attr({style: ''});
     $('html, body').prop({scrollTop: current_scrollY});
   });
