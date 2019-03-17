@@ -564,6 +564,9 @@
 				$('.modal_img_frame').click(function () {
 					publicMethod.close();
 				});
+				$('.modal_img_frame2').click(function () {
+					publicMethod.close();
+				});
 
 
 
