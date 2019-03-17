@@ -1,0 +1,359 @@
+$(function(){
+  /*-- モーダルウィンドウ --*/
+  $(".inline").colorbox({
+    inline: true,
+    maxWidth: "94%",
+    maxHeight: "80%",
+    returnFocus: false,
+    opacity: 1,
+  });
+  /*-- モーダルウィンドウ　（コンタクト用） --*/
+  $(".iframe").modaal({
+    type:'iframe',
+    width: 700,
+    height: 570,
+    background: '#fff',
+    overlay_opacity: '0.8',
+    overlay_close: false,
+  });
+
+  /*-- モーダルウィンドウ　背景画像_各曲 --*/
+  var bgImg = $('.modal_img_frame img');
+  var bgWidth = 960;
+  var bgHeight = 500;
+  function adjust(){
+    var winWidth = $(window).width();
+    var winHeight = $(window).height();
+    var imgWidth = winWidth;
+    var imgHeight = Math.floor(bgHeight * (winWidth / bgWidth));
+    var imgTop = (winHeight - imgHeight) / 2;
+    var imgLeft = 0;
+    if (imgHeight >= winHeight){
+    }else{
+      imgHeight = winHeight;
+      imgWidth = Math.floor(bgWidth * (winHeight / bgHeight));
+      imgTop = 0;
+      imgLeft = (winWidth - imgWidth) / 2;
+    }
+    bgImg.css({
+      top: imgTop,
+      left: imgLeft,
+      width: imgWidth,
+      height: imgHeight
+    })
+  }
+  /*-- モーダルウィンドウ　背景画像_アルバム --*/
+  var bgImg2 = $('.modal_img_frame2 img');
+  var bgWidth2 = 250;
+  var bgHeight2 = 250;
+  function adjust2(){
+    var winWidth2 = $(window).width();
+    var winHeight2 = $(window).height();
+    var imgWidth2 = winWidth2;
+    var imgHeight2 = Math.floor(bgHeight2 * (winWidth2 / bgWidth2));
+    var imgTop2 = (winHeight2 - imgHeight2) / 2;
+    var imgLeft2 = 0;
+    if (imgHeight2 >= winHeight2){
+    }else{
+      imgHeight2 = winHeight2;
+      imgWidth2 = Math.floor(bgWidth2 * (winHeight2 / bgHeight2));
+      imgTop2 = 0;
+      imgLeft2 = (winWidth2 - imgWidth2) / 2;
+    }
+    bgImg2.css({
+      top: imgTop2,
+      left: imgLeft2,
+      width: imgWidth2,
+      height: imgHeight2
+    })
+  }
+  adjust2();
+  $(window).on('load resize', function(){
+    adjust();
+    adjust2();
+  });
+
+  /*-- スムーズスクロール --*/
+  $(".scroll").on('click',function(event){
+    event.preventDefault();
+    var url = this.href;
+    var parts = url.split("#");
+    var target = parts[1];
+    var target_offset = $("#"+target).offset();
+    var target_top = target_offset.top;
+    $('html, body').animate({scrollTop:target_top}, 800);
+  });
+  $("#top_back, #top_back_fix").on('click',function(event){
+    event.preventDefault();
+    $('html, body').animate({scrollTop: 0}, 800);
+  });
+
+  /*-- カレント表示 --*/
+  var scrollMenu = function(){
+    var array = {
+      'header': 0,
+      '#link_1': 0,
+      '#link_2': 0,
+      '#link_3': 0,
+      '#link_4': 0
+    };
+    var $globalNavi = new Array();
+    for (var key in array){
+      if ($(key).offset()){
+        array[key] = $(key).offset().top - 0;
+        $globalNavi[key] = $('nav ul li a[href="' + key + '"]');
+      }
+    }
+    $(window).scroll(function (){
+      for (var key in array){
+        if ($(window).scrollTop() > array[key] - 80){
+          $('nav ul li a').each(function(){
+            $(this).removeClass('active');
+          });
+          $globalNavi[key].addClass('active');
+        }
+      }
+    });
+  }
+  scrollMenu();
+
+  /*-- TOPに戻るフェード --*/
+  var topBtn = $('#top_back_fix');    
+  $(window).scroll(function(){
+    if ($(window).scrollTop() > 100){
+      $(topBtn).addClass('top_back_op');
+    }else{
+      $(topBtn).removeClass('top_back_op');
+    }
+  });
+   /*-- 固定オーディオフェード --*/ 
+  if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){
+  }else{
+    var audio_space_in = $('#audio_space_in');
+    $(window).scroll(function(){
+    if ($(window).scrollTop() > 100){
+      $(audio_space_in).addClass('audio_op');
+    }
+  });
+  }
+
+  /*-- colorbox時の背景固定 --*/
+  var current_scrollY;
+  $(".inline").on('click',function(){
+    current_scrollY = $( window ).scrollTop(); 
+    $('body').css({
+      position: 'fixed',
+      width: '100%',
+      top: -1 * current_scrollY
+    });
+  });
+  $("#cboxOverlay, .cbox_close, .cbox_close_2, .modal_img_frame").on('click',function(){
+    $('body').attr({style: ''});
+    $('html, body').prop({scrollTop: current_scrollY});
+  });
+
+  /*-- パララックス --*/
+  var target_top = $("header");
+  var targetPosOT_top = target_top.offset().top;
+  var target1 = $("#discography");
+  var targetPosOT1 = target1.offset().top;
+  var target2 = $("#participation");
+  var targetPosOT2 = target2.offset().top;
+  var targetFactor = 0.5;
+  var windowH = $(window).height();
+  var scrollYStart_top = targetPosOT_top;
+  var scrollYStart1 = targetPosOT1 - windowH - '80';
+  var scrollYStart2 = targetPosOT2 - windowH - '80';
+  $(window).on('scroll',function(){
+    var scrollY = $(this).scrollTop();
+    if(scrollY > scrollYStart_top){
+      target_top.css('background-position-y', (scrollY - targetPosOT_top) * targetFactor + 'px');
+    }else{
+      target_top.css('background-position','center top');
+    }
+    if(scrollY > scrollYStart1){
+      target1.css('background-position-y', (scrollY - targetPosOT1 - '-30') * targetFactor + 'px');
+    }else{
+      target1.css('background-position','center top');
+    }
+    if(scrollY > scrollYStart2){
+      target2.css('background-position-y', (scrollY - targetPosOT2) * targetFactor + 'px');
+    }else{
+      target2.css('background-position','center top');
+    }
+  });
+
+  /*-- infoのスクロールバー --*/
+  $('#info_box').on({
+    'mouseenter' : function(){
+      $(this).addClass('info_active');
+    },'mouseleave' : function(){
+      $(this).removeClass('info_active');
+    }
+  });
+});
+
+/*-- WaveSurfer（プレーヤー設定） --*/
+var wavesurfer = WaveSurfer.create({
+  container: '#waveform',
+  height: '22',
+  waveColor: '#aaa',
+  progressColor: '#53c6d6',
+  barWidth: '1',
+});
+
+/*-- WaveSurfer --*/
+document.addEventListener('DOMContentLoaded', function(){
+  wavesurfer.load("https://dl.dropboxusercontent.com/s/sl80felytnydlxo/%E6%9E%B6%E7%A9%BA.mp3");//デフォルト曲
+  wavesurfer.on('ready', function(){
+    var volume = "#volume";
+    if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){
+      wavesurfer.setVolume(1);//スマホ初期音量
+    }else{
+      if($(volume).hasClass('vol_val')){
+      }else{
+        document.querySelector(volume).value = '0.5';
+        wavesurfer.setVolume(0.5);//PC初期音量
+        $(volume).addClass('vol_val');
+      }
+    }
+    var volumeInput = document.querySelector(volume);
+    var onChangeVolume = function (e) {
+      wavesurfer.setVolume(e.target.value);
+    };
+    volumeInput.addEventListener('input', onChangeVolume);
+    volumeInput.addEventListener('change', onChangeVolume);
+    document.getElementById('progress').style.display = 'none';//読み込み中非表示
+  });
+
+  //再生ボタン(固定プレーヤー)
+  $('#audio_play').on('click', function(){
+    wavesurfer.playPause()
+    links[currentTrack].classList.add('active');
+    $(links[currentTrack]).parent().addClass(m_current);
+  });
+  wavesurfer.on('audioprocess', function(){
+    $('#audio_play img').attr('src','images/audio_con/con_stop.png');
+  });
+  wavesurfer.on('pause', function(){
+    $('#audio_play img').attr('src','images/audio_con/con_play.png');
+  });
+  //再生ボタン(各曲)
+  var m_bt = '.playlist, .playlist_ar';
+  var m_play_bt = 'm_play_bt';
+  var m_current = 'm_current';
+  $(m_bt).on('click',function(){
+    $(m_bt).children('img').removeClass(m_play_bt);
+    $(this).children('img').addClass(m_play_bt);
+    $(m_bt).parent('li').removeClass(m_current);
+    $(this).parent('li').addClass(m_current);
+    document.getElementById('progress').style.display = 'inherit';//読み込み中表示
+  });
+
+  //表示時間
+  var formatTime = function (time){
+    return [
+      Math.floor((time % 3600) / 60),
+      ('00' + Math.floor(time % 60)).slice(-2)
+    ].join(':');
+  };
+  //再生時間
+  wavesurfer.on('audioprocess', function (){
+    $('.waveform_counter').text( formatTime(wavesurfer.getCurrentTime()) );
+  });
+  //ファイルの時間
+  wavesurfer.on('ready', function (){
+    $('.waveform_duration').text( formatTime(wavesurfer.getDuration()) );
+  });
+
+  //プレイリスト化
+  var links = document.querySelectorAll(m_bt);
+  var currentTrack = 0;
+  var setCurrentSong = function(index){
+    links[currentTrack].classList.remove('active');
+    currentTrack = index;
+    $(m_bt).children('img').removeClass(m_play_bt);//カレント再生ボタン
+    links[currentTrack].classList.add('active');
+    $(m_bt).parent().removeClass(m_current);//カレント諸々
+    $(links[currentTrack]).parent().addClass(m_current);
+    wavesurfer.load(links[currentTrack].name);//ここで曲読み込み
+    document.getElementById("audio_title").innerText = $(links[currentTrack]).prev().text();//曲名表示
+    document.getElementById('progress').style.display = 'inherit';//読み込み中表示
+    wavesurfer.on('ready', function () {
+      wavesurfer.play();//ここで再生
+    });
+  };
+  Array.prototype.forEach.call(links, function(link, index){
+    link.addEventListener('click', function(e){
+        e.preventDefault();
+        setCurrentSong(index);
+    });
+  });
+
+  //次の曲へ
+  $("#audio_next").on('click',function(){
+    setCurrentSong((currentTrack + 1) % links.length);
+  });
+  //曲の最初へ
+  $("#audio_prev").on('click',function(){
+    wavesurfer.stop();
+    wavesurfer.play();
+  });
+  //リピート切替
+  $("#audio_repeat").on('click',function(){
+    $(this).toggleClass("repeat_active");
+    wavesurfer.on('finish', function(){
+      if($('#audio_repeat').hasClass('repeat_active')){
+        wavesurfer.stop();
+        wavesurfer.play();
+      }
+    });
+  });
+});
+
+/*-- 音量スライダー色 --*/
+var timer = null;
+var vol_input = document.getElementById("volume");
+var prev_val = vol_input.value;
+vol_input.addEventListener("focus", function(){
+  window.clearInterval(timer);
+  timer = window.setInterval(function(){
+    var new_val = vol_input.value;
+    if(prev_val != new_val){
+      var b_v = vol_input.value,
+      max = vol_input.max,
+      range_x = vol_input.clientWidth;
+      var b_r =  (range_x / max);
+      b_r = (b_r*b_v);
+      var bright_bar = document.getElementById("volume_active");
+      bright_bar.style.width = b_r+"px";
+      change_img.style.webkitFilter = "brightness("+b_v+"%)";
+    }
+    prev_value = new_value;
+  }, 1);
+}, false);
+
+//アイコン変化
+$('#volume').on('input change', function(){
+  var vol_img = document.getElementById("volume").value;
+  var speaker = "#audio_sp img";
+  if(vol_img == 0){
+    $(speaker).attr('src','images/audio_con/con_sp_0.png');
+  }else if(vol_img > 0.51){
+    $(speaker).attr('src','images/audio_con/con_sp_100.png');
+  }else{
+    $(speaker).attr('src','images/audio_con/con_sp_50.png');
+  }
+});
+
+/*-- タイトル　アニメ --*/
+$(window).on('load', function(){
+  $(".title_border").addClass("active_border");
+  $(".title_border").delay(1900).queue(function(){
+     $(this).addClass("active_border_op");
+     $("h1").addClass("h1_op");
+  });
+});
+
+/*-- パララックス --*/
+$(window).enllax();
