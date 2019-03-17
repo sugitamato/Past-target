@@ -1,0 +1,1691 @@
+@charset "utf-8";
+
+/*--　h1　--*/
+@import url('https://fonts.googleapis.com/css?family=Changa:200');
+/*--　h2 h3 menu　--*/
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:600);
+/*--　all　--*/
+@import url('https://fonts.googleapis.com/css?family=Sawarabi+Gothic');
+
+/*---------------------------------------------------------------
+　　　PC layout
+---------------------------------------------------------------*/
+@media screen and (min-width: 641px){
+html, body{
+	height: 100%;
+	font-family: 'Sawarabi Gothic', sans-serif;
+	font-size: 12px;
+	color: #333;
+	letter-spacing: 0.4px;
+	cursor: default;
+	background-color: #fff;
+}
+
+a{
+	color: #333;
+	text-decoration: none;
+	outline: none;
+	transition: all 0.3s ease;
+}
+a:hover{
+	color: #53c6d6;
+}
+
+h1{
+	font-size: 20px;
+	letter-spacing: 2px;
+	color: #fff;
+	font-family: 'Changa', sans-serif;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	margin: auto;
+	font-weight: normal;
+	margin: -10px 0 0 0;
+	opacity: 0;
+}
+h1:before{
+	content: "　";
+	position: absolute;
+	top: -50px;
+	left: 50%;
+	width: 30px;
+	height: 30px;
+	margin: 0 0 0 -15px;
+	background: url("images/logo.png") center center/30px 30px no-repeat;
+}
+h1:after{
+	content: "";
+	position: absolute;
+	width: 300px;
+	height: 200px;
+	background: rgba(255,255,255,0);
+	top: 50%;
+	left: 50%;
+	z-index: -1;
+	margin: -124px 0 0 -150px;
+}
+h1 span{
+	display: block;
+	font-size: 12px;
+	margin: 10px auto 0 auto;
+	color: #aaa;
+	letter-spacing: 2px;
+}
+.h1_op{
+	opacity: 1 !important;
+	transition: all 0.6s ease;
+}
+
+h2{
+	font-size: 38px;
+	margin: 0 0 80px 0;
+	color: #666;
+	font-family: 'Titillium Web';
+	display: inline-block;
+}
+h2:after{
+	content: "";
+	position: absolute;
+	bottom: -20px;
+	left: 0;
+	right: 0;
+	width: 50px;
+	height: 4px;
+	margin: 0 auto;
+	background-color: #53c6d6;
+	border-radius: 4px;
+}
+
+h3{
+	font-size: 23px;
+	color: #666;
+	font-family: 'Titillium Web';
+	display: inline-block;
+	padding: 15px 0;
+	width: 250px;
+}
+.h3_back{
+	position: absolute;
+	width: 280px;
+	height: 4px;
+	border-radius: 4px;
+	background-color: #2e2e2e;
+	z-index: -1;
+	left: 0;
+	right: 0;
+	margin: -20px auto 0 auto;
+}
+
+article{
+	padding: 0 50px;
+}
+section{
+	position: relative;
+	top: -50px;
+}
+
+/*--　枠 （これいる？）　--*/
+body:before,
+body:after{
+	content: "";
+	background: #fff;
+	position: fixed;
+	display: block;
+	z-index: 1;
+	width: 50px;
+	height: 100vh;
+	top: 0;
+}
+/*-- 右枠 --*/
+body:before{
+	right: 0;
+}
+/*-- 左枠 --*/
+body:after{
+	left: 0;
+}
+
+/*-- ドラッグカラー --*/
+::selection {
+	color: #fff;
+	background-color: #53c6d6;
+}
+::-moz-selection {
+	color: #fff;
+	background-color: #53c6d6;
+}
+
+/*-- スクロールバー --*/
+::-webkit-scrollbar{
+	width: 8px;
+}
+::-webkit-scrollbar-track{
+	background: #fff;
+	border-left: solid 1px #ddd;
+}
+::-webkit-scrollbar-thumb{
+	background: #ccc;
+	box-shadow: inset 0 0 2px #888;
+}
+
+/*-- ページ内リンクのずれ対策 --*/
+#link_1{
+	padding-top: 150px;
+	margin-top: -150px;
+}
+#link_2,
+#link_3{
+	padding-top: 10px;
+	margin-top: -10px;
+}
+#link_4,
+#link_5,
+#link_6,
+#link_7,
+#link_8{
+	padding-top: 100px;
+	margin-top: -100px;
+}
+
+/*-- float解除 --*/
+.clearfix:after{
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+
+/*========================== header ==========================*/
+header{
+	text-align: center;
+	height: 100vh;
+	opacity: 0.8;
+	margin: -50px 0 0 0;
+}
+header:before{
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	margin: -50px 0 0 0;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAKElEQVQYV2NkwA7OMGIRP8PAwGCCLgEWBClGloALIkugCMIkMARBEgCeCgXTiftPxQAAAABJRU5ErkJggg==);
+}
+
+/*-- border_アニメ --*/
+.title_border{
+	width: 300px;
+	margin: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 0;
+	margin: -114px 0 0 -150px;
+}
+.title_border_in{
+	position: relative;
+	width: 100%;
+	height: 200px;
+}
+.title_border_in span{
+	position: absolute;
+}
+.title_border_in span:nth-child(1),
+.title_border_in span:nth-child(4){
+	top: 0;
+	background-color: #666;
+	transition: all .9s linear;
+}
+.title_border_in span:nth-child(3),
+.title_border_in span:nth-child(2){
+	left: 0;
+	background-color: #666;
+	transition: all .9s linear;
+}
+.title_border_in span:nth-child(1){
+	left: 0;
+	width: 0;
+	height: 2px;
+	transform-origin: left center;
+}
+.title_border_in span:nth-child(2){
+	top: 0;
+	width: 2px;
+	height: 100%;
+	transform-origin: center top;
+	transform: scaleY(0);
+}
+.title_border_in span:nth-child(3){
+	bottom: 0;
+	width: 0;
+	height: 2px;
+	transform-origin: left center;
+	transition-delay: .9s;
+}
+.title_border_in span:nth-child(4){
+	right: 0;
+	width: 2px;
+	height: 100%;
+	transform: scaleY(0);
+	transform-origin: center top;
+	transition-delay: .9s;
+}
+.active_border .title_border_in span:nth-child(3),
+.active_border .title_border_in span:nth-child(1){
+	width: 100%;
+}
+.active_border .title_border_in span:nth-child(4),
+.active_border .title_border_in span:nth-child(2){
+	transform: scaleY(1);
+}
+.active_border_op{
+	background: rgba(255,255,255,0.08);
+	transition: 0.4s;
+}
+
+/*-- トップ　スクロール案内 --*/
+.scroll_guide{
+	color: #bbb;
+	font-size: 12px;
+	position: absolute;
+	width: 80px;
+	height: 105px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	letter-spacing: 1px;
+	padding: 15px 0 50px 0;
+}
+.scroll_guide:before{
+	content: "";
+	position: absolute;
+	width: 1px;
+	height: 80px;
+	bottom: 0;
+	left: 40px;
+	background-color: #777;
+	transition: all 0.3s ease;
+	padding: 0 0 50px 0;
+}
+.scroll_guide:hover{
+	height: 100px;
+}
+.scroll_guide:hover:before{
+	background-color: #53c6d6;
+}
+
+/*-- パララックス背景 --*/
+.parallax{
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;    
+}
+.parallax.bg_top{
+	background: url(images/top_img.png) center 25px/cover no-repeat;
+}
+
+
+/*============================ info ============================*/
+#info{
+	position: relative;
+	z-index: 5;
+	top: -100px;
+	right: 0;
+	left: 0;
+	padding: 0 0 0 0;
+	margin: 50px 0 0 0;
+}
+#info_box{
+	background-color: #fff;
+	width: 816px;
+	height: 190px;
+	margin: 0 auto;
+	color: #333;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	font-size: 10.5px;
+	letter-spacing: 0.8px;
+	list-style: none;
+	padding: 0 20px;
+}
+#info_box li{
+	padding: 18px 0 18px 10px;
+	border-bottom: 1px solid #e5e5e5;
+}
+#info_box li:first-child{
+	padding: 21px 0 18px 10px;
+}
+#info_box li:last-child{
+	padding: 18px 0 21px 10px;
+	border-bottom: none;
+}
+#info_box span{
+	background-color: #2e2e2e;
+	border-radius: 10px;
+	padding: 2px 10px 3px 10px;
+	margin: 0 12px 0 0;
+	color: #ddd;
+}
+#info_box a{
+	color: #333;
+	border-bottom: 1px dashed #bbb;
+}
+#info_box a:hover{
+	color: #53c6d6;
+	border-bottom: 1px dashed #53c6d6;
+}
+
+/*-- ボックススクロールバー --*/
+#info_box::-webkit-scrollbar{
+	width: 8px;
+}
+#info_box::-webkit-scrollbar-track{
+	background: #fff;
+	border: none;
+}
+#info_box::-webkit-scrollbar-thumb{
+	background: #ddd;
+	box-shadow: none;
+}
+.info_active{
+	overflow-y: scroll !important;
+}
+
+/*-- info タイトル --*/
+#info_title{
+	position: absolute;
+	z-index: -1;
+	top: 10px;
+	left: 0;
+	right: 795px;
+	background-color: #2e2e2e;
+	width: 160px;
+	height: 190px;
+	margin: 0 auto;
+	font-weight: bold;
+	color: #fff;
+	font-size: 30px;
+}
+#info_title:before{
+	content: "Information";
+	position: absolute;
+	top: 17px;
+	left: 12px;
+	color: #ddd;
+	font-size: 20px;
+	letter-spacing: 5px;
+	writing-mode: vertical-rl;
+}
+
+
+/*============================ nav ============================*/
+nav{
+	width: 100%;
+	height: 50px;
+	top: 0;
+	z-index: 1000;
+	background-color: #fff;
+	position: fixed;
+	font-family: 'Titillium Web';
+}
+nav ul{
+	text-align: center;
+	font-size: 0;
+	line-height: 50px;
+}
+nav ul li{
+	display: inline-block;
+}
+nav ul li a{
+	margin: 0 30px;
+	font-size: 13.5px;
+	color: #777;
+	position: relative;
+	display: inline-block;
+}
+nav ul li a:after{
+	content: "";
+	position: absolute;
+	bottom: 12px;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #53c6d6;
+	transform: scale(0, 1);
+	transform-origin: right top;
+	transition: transform .3s;
+}
+nav ul li .active{
+	color: #53c6d6 !important;
+}
+nav ul li .active:after{
+	transform-origin: left top;
+	transform: scale(1, 1);
+}
+nav ul li a:hover{
+	color: #53c6d6;
+}
+
+
+/*========================== music ==========================*/
+#music{
+	width: 100%;
+	background-color: #f3f3f3;
+	position: relative;
+	text-align: center;
+	padding: 160px 0 0 0;
+	z-index: 4;
+	margin: -140px 0 0 0;
+}
+
+/*-- 曲一覧のカテゴリー --*/
+.music_cat,
+.music_cat_ar,
+.music_cat_in{
+	width: 100%;
+	margin: 0 0 22px 0;
+	z-index: 0;
+}
+.music_cat h3{
+	background: rgba(243,243,243,0.9);
+}
+.music_cat_ar h3{
+	background: rgba(250,250,250,0.9);
+}
+.music_cat_in h3{
+	background: rgba(255,255,255,0.9);
+}
+
+/*-- 各曲フレーム --*/
+.music_frame,
+.music_frame_ar,
+.music_frame_in{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 40px 0 60px 0;
+}
+.music_frame{
+	padding: 0px 0 60px 0 !important;
+}
+.music_frame_item{
+	position: relative;
+	transition: all 0.5s ease;
+	width: 250px;
+	height: 130px;
+	margin: 10px;
+	cursor: pointer;
+	filter: grayscale(100%);
+	overflow: hidden;
+}
+.music_frame_item:before{
+	content: "";
+	background-color: #fff;
+	opacity: 0.5;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+.music_frame_item:hover{
+	box-shadow: 0 0 12px #444 inset !important;
+	filter: grayscale(0%);
+}
+.music_frame_item:hover:before{
+	opacity: 0.3;
+}
+
+/*-- 曲頭アイコン部分 --*/
+.music_title:before{
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	left: 0;
+	margin: -2px 8px 0 10px;
+	width: 18px;
+	height: 18px;
+	background: url("images/m_icon_4.png") no-repeat; 
+	background-size: contain;
+}
+
+/*-- 曲名部分 --*/
+.music_title{
+	text-align: left;
+	margin: 10px 0 0 0;
+	padding: 8px 0 5px 0;
+	background: rgba(255,255,255,0.5);
+	position: relative;
+	transition: all 0.5s ease;
+	letter-spacing: -0.1px;
+}
+.music_frame_item:hover > .music_title,
+.music_frame_item_ar:hover > .music_title,
+.music_frame_item_in:hover > .music_title{
+	background: rgba(255,255,255,0.7);
+	box-shadow: 0px 3px 3px -3px rgba(0,0,0,0.4);
+}
+
+/*-- テーマ、公開日部分 --*/
+.music_thema,
+.music_date{
+	font-size: 10.5px;
+	color: #f8f8f8;
+	text-shadow: 1px 1px 3px #000;
+	background: rgba(0,0,0,0.2);
+	opacity: 0;
+	transition: all 0.3s ease;
+	left: 10px;
+	position: absolute;
+}
+.music_thema{
+	bottom: 31px;
+	padding: 4px 0;
+}
+.music_date{
+	bottom: 10px;
+	padding: 4px 6px 5px 6px;
+}
+.music_frame_item:hover > .m_data .music_thema,
+.music_frame_item:hover > .m_data .music_date,
+.music_frame_item_ar:hover > .music_date,
+.music_frame_item_in:hover > .music_date{
+	opacity: 1;
+}
+
+/*-- リンク部分 --*/
+.m_link{
+	position: absolute;
+	font-size: 11px;
+	bottom: 0px;
+	right: -35px;
+	opacity: 1;
+	height: 25px;
+	transition: all 0.3s ease;
+	z-index: 2;
+}
+.music_frame_item:hover > .m_link{
+	opacity: 1;
+	right: 0;
+}
+.m_link a{
+	display: block;
+	color: #333;
+	padding: 2px 0 2px 0;
+	width: 29px;
+	height: 18px;
+	border-radius: 3px 0 0 3px;
+	box-shadow: -2px 0px 5px -4px #444;
+	background: #f3f3f3;
+	position: absolute;
+	bottom: 0;
+	overflow: hidden;
+}
+.m_link a:nth-child(1){
+	margin: 0;
+	right: 0px;
+	bottom: 64px;
+}
+.m_link a:nth-child(2){
+	margin: 0;
+	right: 0px;
+	bottom: 37px;
+}
+.m_link a:nth-child(3){
+	margin: 0;
+	right: 0px;
+	bottom: 10px;
+}
+.m_link a:hover:nth-child(1){
+	width: 60px;
+}
+.m_link a:hover:nth-child(2){
+	width: 102px;
+}
+.m_link a:hover:nth-child(3){
+	width: 90px;
+}
+
+/*-- リンク部分　アイコン --*/
+.m_link a:before{
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	margin: -2px 0 0 0;
+	width: 22px;
+	height: 22px;
+	transition: all 0.3s ease;
+	position: absolute;
+	left: 4px;
+}
+.m_link a:nth-child(1):before{
+	background: url("images/m_link/m_link_1.png") no-repeat;
+	background-size: contain;
+}
+.view_sc:before{
+	background: url("images/m_link/m_link_2sc.png") no-repeat;
+	background-size: contain;
+}
+.view_nico:before{
+	background: url("images/m_link/m_link_2nico.png") no-repeat;
+	background-size: contain;
+}
+.view_site:before{
+	background: url("images/m_link/m_link_2site.png") no-repeat;
+	background-size: contain;
+}
+.m_link a:nth-child(3):before{
+	background: url("images/m_link/m_link_3.png") no-repeat;
+	background-size: contain;
+}
+
+/*--　リンク部分_アイコン後文字　--*/
+.m_link a:after{
+	position: absolute;
+	opacity: 0;
+	transition: 0.3s;
+	top: 7px;
+	white-space: nowrap;
+	font-size: 10px;
+	color: #666;
+}
+.m_link a:nth-child(1):after{
+	content: "歌詞";
+	margin: -1px 0 0 -2px;
+}
+.m_link a:nth-child(2):after{
+	content: "公開サイト 　";
+	margin: -1px 0 0 -23px;
+	background: url("images/w_open.png") no-repeat;
+	background-size: contain;
+	background-position: 55px;
+}
+.m_link a:nth-child(3):after{
+	content: "MP3 DL 　";
+	margin: -1px 0 0 -16px;
+	background: url("images/w_open.png") no-repeat;
+	background-size: contain;
+	background-position: 42px;
+}
+.m_link a:hover:after{
+	opacity: 1;
+}
+
+/*--　リンク無し　--*/
+.none_off{
+	pointer-events: none !important;
+	background-color: #bbb !important;
+}
+
+
+/*====== アレンジ楽曲、インスト楽曲 ======*/
+/*-- 各曲フレーム --*/
+.music_frame_ar{
+	background-color: #fff;
+}
+.music_frame_in{
+	background-color: #fafafa;
+}
+.music_frame_item_ar,
+.music_frame_item_in{
+	position: relative;
+	transition: all 0.5s ease;
+	width: 250px;
+	height: 130px;
+	margin: 10px;
+	cursor: pointer;
+	filter: grayscale(100%);
+	overflow: hidden;
+}
+.music_frame_item_ar:before,
+.music_frame_item_in:before{
+	content: "";
+	background-color: #fff;
+	opacity: 0.5;
+	position: absolute;;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+.music_frame_item_ar:hover,
+.music_frame_item_in:hover{
+	box-shadow: 0 0 12px #444 inset !important;
+	filter: grayscale(0%);
+}
+.music_frame_item_ar:hover:before,
+.music_frame_item_in:hover:before{
+	opacity: 0.3;
+}
+
+/*-- 各曲キャプション --*/
+.m_cap_ar{
+	text-align: center;
+	font-size: 11px;
+	letter-spacing: -0.2px;
+	color: #f8f8f8;
+	text-shadow: 1px 1px 3px #000;
+	background: rgba(0,0,0,0.1);
+	display: inline-block;
+	padding: 5px 0px 6px 0;
+	transition: all 0.3s ease;
+	position: absolute;
+	width: 100%;
+	top: 44px;
+	left: 0;
+	opacity: 0;
+}
+.music_frame_item_ar:hover > .m_cap_ar{
+	background: rgba(0,0,0,0.2);
+	opacity: 1;
+}
+
+/*-- リンク部分 --*/
+.music_frame_ar .m_link a{
+	background: #fff !important;
+}
+.music_frame_ar .m_link > a:nth-child(1){
+	bottom: 37px;
+}
+.music_frame_ar .m_link > a:nth-child(2){
+	bottom: 10px;
+}
+.music_frame_ar .m_link > a:nth-child(3){
+	display: none;
+}
+.music_frame_item_ar:hover > .m_link{
+	opacity: 1;
+	right: 0;
+}
+.music_frame_in .m_link{
+	display: none;
+}
+
+/*-- colorbox背景 --*/
+.modal_img_frame,
+.modal_img_frame2{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: auto; 
+	min-width: 100%; 
+	height: auto;
+	min-height: 100%;
+	cursor: pointer;
+	animation: fadein 1s linear 0s 1;
+}
+@keyframes fadein{
+	0%{
+		opacity:0;
+	}
+	100% {
+		opacity:1;
+	}
+}
+.modal_img_frame img,
+.modal_img_frame2 img{
+	position: relative;
+	width: 100%;
+	height: auto;
+	opacity: 0.5;
+	filter: blur(7px);
+}
+
+
+/*========================== プレーヤー関連部分 ==========================*/
+/*-- 各曲配置の再生ボタン --*/
+.music_play{
+	position: absolute;
+	right: 0px;
+	top: 10px;
+	opacity: 0.2;
+	width: 29px;
+	height: 29px;
+	background-color: #53c6d6;
+	transition: all 0.3s ease;
+}
+.music_play img{
+	width: 13px;
+	position: relative;
+	top: 8px;
+	left: 1px;
+}
+.music_frame_item:hover > .playlist .music_play,
+.music_frame_item_ar:hover > .playlist_ar .music_play,
+.music_frame_item_in:hover > .playlist .music_play{
+	opacity: 1;
+}
+.m_play_bt{
+	opacity: 1 !important;
+}
+.playlist.active .music_play,
+.playlist_ar.active .music_play{
+	opacity: 1 !important;
+}
+
+/*-- 再生楽曲カレント --*/
+.m_current{
+	box-shadow: 0 0 12px #444 inset !important;
+	filter: grayscale(0%) !important;
+}
+.m_current:before{
+	opacity: 0.3 !important;
+}
+.m_current > .music_title{
+	background: rgba(255,255,255,0.7) !important;
+	box-shadow: 0px 3px 3px -3px rgba(0,0,0,0.4) !important;
+}
+.m_current .music_thema,
+.m_current .music_date,
+.m_current .m_data_ar,
+.m_current .m_data_in{
+	opacity: 1 !important;
+}
+.m_current .m_link{
+	right: 0 !important;
+}
+.m_current > .m_cap_ar{
+	background: rgba(0,0,0,0.2) !important;
+	opacity: 1 !important;
+}
+
+/*-- 再生ボタン範囲拡大 --*/
+.frame_m_link{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	z-index: 1;
+}
+
+
+/*========================== 各曲画像 ==========================*/
+.music_frame_item:nth-last-child(42){background: url(images/m_bg/bg44.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(41){background: url(images/m_bg/bg43.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(40){background: url(images/m_bg/bg42.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(39){background: url(images/m_bg/bg41.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(38){background: url(images/m_bg/bg40.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(37){background: url(images/m_bg/bg39.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(36){background: url(images/m_bg/bg38.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(35){background: url(images/m_bg/bg37.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(34){background: url(images/m_bg/bg36.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(33){background: url(images/m_bg/bg35.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(32){background: url(images/m_bg/bg34.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(31){background: url(images/m_bg/bg33.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(30){background: url(images/m_bg/bg32.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(29){background: url(images/m_bg/bg31.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(28){background: url(images/m_bg/bg30.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(27){background: url(images/m_bg/bg29.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(26){background: url(images/m_bg/bg28.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(25){background: url(images/m_bg/bg27.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(24){background: url(images/m_bg/bg26.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(23){background: url(images/m_bg/bg25.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(22){background: url(images/m_bg/bg24.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(21){background: url(images/m_bg/bg23.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(20){background: url(images/m_bg/bg22.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(19){background: url(images/m_bg/bg21.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(18){background: url(images/m_bg/bg20.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(17){background: url(images/m_bg/bg19.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(16){background: url(images/m_bg/bg18.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(15){background: url(images/m_bg/bg17.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(14){background: url(images/m_bg/bg16.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(13){background: url(images/m_bg/bg15.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(12){background: url(images/m_bg/bg14.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(11){background: url(images/m_bg/bg13.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(10){background: url(images/m_bg/bg12.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(9){background: url(images/m_bg/bg11.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(8){background: url(images/m_bg/bg10.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(7){background: url(images/m_bg/bg9.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(6){background: url(images/m_bg/bg8.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(5){background: url(images/m_bg/bg7.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(4){background: url(images/m_bg/bg6.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(3){background: url(images/m_bg/bg5.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(2){background: url(images/m_bg/bg4.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item:nth-last-child(1){background: url(images/m_bg/bg3.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+
+.music_frame_item_in:nth-last-child(4){background: url(images/m_bg/bg_in4.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item_in:nth-last-child(3){background: url(images/m_bg/bg_in3.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item_in:nth-last-child(2){background: url(images/m_bg/bg_in2.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item_in:nth-last-child(1){background: url(images/m_bg/bg_in1.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+
+.music_frame_item_ar:nth-last-child(2){background: url(images/m_bg/bg_ar2.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item_ar:nth-last-child(1){background: url(images/m_bg/bg_ar1.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+
+
+/*========================== discography、participation ==========================*/
+#discography,
+#participation{
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	padding: 70px 0 110px 0;
+}
+#discography{
+	z-index: 0;
+}
+#participation{
+	padding-bottom: 180px;
+}
+#discography:before,
+#participation:before{
+	content: "";
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 0;
+	padding-bottom: 600px;
+	transform: skewY(-3deg);
+	z-index: -1;
+}
+#discography:before{
+	background: url(images/back.jpg) center bottom/cover no-repeat fixed;
+}
+#participation:before{
+	background: url(images/back_2.png) center bottom/cover no-repeat fixed;
+}
+#discography h2,
+#participation h2{
+	padding-top: 90px;
+}
+
+/*-- 背景の図 --*/
+.back_drawing{
+	content: "";
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 0;
+	padding-bottom: 400px;
+	transform: skewY(3deg);
+	background-color: #2e2e2e;
+	margin: 35px 0 0 0;
+	z-index: -1;
+}
+.back_drawing_2{
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 0;
+	z-index: -1;
+	border-top: 3vw solid transparent;
+	border-right: 50vw solid #53c6d6;
+	border-bottom: 3.5vw solid transparent;
+	opacity: 0.3;
+}
+
+/*-- 中身 --*/
+.thum_flame{
+	margin: 0 auto;
+	text-align: center;
+	font-size: 0;
+}
+.thum_flame li{
+	display: inline-block;
+	margin: 7px;
+}
+.thum_flame figure{
+	position: relative;
+	overflow: hidden;
+	box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+	background-color: #fff;
+}
+.thum_flame img{
+	width: 180px;
+	height: 180px;
+	border: 6px solid #fff;
+	opacity: 0.8;
+}
+.thum_flame figcaption{
+	font-size: 13px;
+	letter-spacing: 1.5px;
+	line-height: 18px;
+	position: absolute;
+	margin: 6px 0 0 6px;
+	top: 0;
+	z-index: 2;
+	width: 180px;
+	height: 180px;
+	background: rgba(0,0,0,0.77);
+	transition: .4s;
+	opacity: 0;
+	display: flex;
+	border-radius: 110px;
+}
+.thum_flame figcaption p{
+	color: #fff;
+	flex: 0 1 auto;
+	margin: auto;
+	font-size: 13px;
+}
+.thum_flame figcaption p span{
+	display: block;
+	font-size: 10px;
+	letter-spacing: 0;
+	line-height: 13px;
+	padding: 8px 0 0 0;
+	color: #aaa;
+}
+.thum_flame figure:hover figcaption{
+	opacity: 1;
+	top: 0;
+}
+.thum_flame figure:hover figcaption p{
+	opacity: 1;
+	bottom: 0;
+}
+
+/*====== colorbox部分 ======*/
+.al_box_img{
+	float: left;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+	margin: 0 20px 0 35px;
+	width: 200px;
+	border: 6px solid #fff;
+}
+.al_box_list{
+	float: left;
+	text-align: left;
+	font-size: 12px;
+	line-height: 18px;
+	white-space: normal;
+	width: 210px;
+}
+.al_box_title{
+	display: block;
+	font-weight: bold;
+	font-size: 17px;
+	margin: 7px 0 5px 0;
+	color: #2E7DA1;
+	letter-spacing: 1.5px;
+}
+.al_box_date{
+	display: block;
+	font-size: 10px;
+	margin: 0 0 14px 0;
+	color: #888;
+	letter-spacing: 0.5px;
+	line-height: 12.5px;
+}
+.al_box_under{
+	clear: both;
+}
+.al_box_under a{
+	display: inline-block;
+	width: 19.6%;
+	color: #333;
+	border-radius: 2px;
+	margin: 25px 2px 0 2px;
+	padding: 7px 0 6px 0;
+	border: 1px solid #999;
+}
+.al_box_under a:hover{
+	background-color: #53c6d6;
+	border: 1px solid #53c6d6;
+	color: #fff;
+}
+.al_box_none_off{
+	pointer-events: none;
+	background-color: #bbb !important;
+}
+.al_box_link{
+	border-bottom: 1px dashed #aaa;
+}
+.al_box_link:hover{
+	border-bottom: 1px dashed #53c6d6;
+}
+.al_box_link:after{
+	content: "";
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	background: url("images/w_open2.png") no-repeat;
+	background-size: contain;
+	margin: 0 0 -1px 5px;
+	opacity: 0.3;
+	transition: all 0.3s ease;
+}
+.al_box_link:hover:after{
+	background: url("images/w_open3.png") no-repeat;
+	background-size: contain;
+	opacity: 1;
+}
+
+/*-- リンク部分　アイコン --*/
+.al_box_under a:nth-child(1):before,
+.al_box_under a:nth-child(2):before,
+.al_box_under a:nth-child(3):before,
+.al_box_under a:nth-child(4):before{
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	margin: -2px 2px -1px -9px;
+	width: 24px;
+	height: 23px;
+	transition: all 0.3s ease;
+}
+.al_box_under a:nth-child(1):before{
+	background: url("images/al_icon/al_box_icon_1.png") no-repeat;
+	background-size: contain;
+}
+.al_box_under a:nth-child(2):before{
+	background: url("images/al_icon/al_box_icon_2.png") no-repeat;
+	background-size: contain;
+}
+.al_box_under a:nth-child(3):before{
+	background: url("images/al_icon/al_box_icon_3.png") no-repeat;
+	background-size: contain;
+}
+.al_box_under a:nth-child(4):before{
+	background: url("images/al_icon/al_box_icon_4.png") no-repeat;
+	background-size: contain;
+}
+.al_box_under a:nth-child(1):hover:before{
+	background: url("images/al_icon/al_box_icon_1_h.png") no-repeat;
+	background-size: contain;
+}
+.al_box_under a:nth-child(2):hover:before{
+	background: url("images/al_icon/al_box_icon_2_h.png") no-repeat;
+	background-size: contain;
+}
+.al_box_under a:nth-child(3):hover:before{
+	background: url("images/al_icon/al_box_icon_3_h.png") no-repeat;
+	background-size: contain;
+}
+.al_box_under a:nth-child(4):hover:before{
+	background: url("images/al_icon/al_box_icon_4_h.png") no-repeat;
+	background-size: contain;
+}
+.al_box_under a:after{
+	content: "";
+	display: inline-block;
+	width: 9px;
+	height: 9px;
+	background: url("images/w_open2.png") no-repeat;
+	background-size: contain;
+	margin: 15px 2px -16px -11px;
+	opacity: 0.3;
+	float: right;
+}
+
+
+/*========================== about ==========================*/
+#about{
+	width: 100%;
+	text-align: center;
+	background-color: #fff;
+	padding: 70px 0 0 0;
+	z-index: 0;
+}
+
+/*-- タイトル背面 --*/
+#about_title_left{
+	position: absolute;
+	z-index: -1;
+	background-color: #f3f3f3;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+}
+#about_title_right{
+	position: absolute;
+	z-index: -1;
+	background-color: #fff;
+	top: 0;
+	right: 0;
+	width: 50%;
+	height: 100%;
+}
+
+/*-- 中身 --*/
+#about_flame{
+	font-size: 11.5px;
+	line-height: 21.5px;
+	white-space: nowrap;
+	position: relative;
+	z-index: -1;
+}
+#about_left{
+	width: 49.5%;
+	float: left;
+	text-align: right;
+	padding: 20px 0.5% 120px 0;
+	background-color: #fff;
+}
+#about_right{
+	width: 49.5%;
+	float: right;
+	text-align: left;
+	padding: 20px 0px 120px 0.5%;
+	background-color: #f3f3f3;
+}
+
+/*-- コンタクト部分 --*/
+#contact_href{
+	border-bottom: 1px dashed #aaa;
+}
+#contact_href:hover{
+	border-bottom: 1px dashed #53c6d6;
+	transition: all 0.3s ease;
+}
+
+
+/*========================== top_back ==========================*/
+#top_back_fix{
+	display: block;
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	cursor: pointer;
+	z-index: 100001;
+	width: 50px;
+	height: 50px;
+	transition: all 0.3s ease;
+	opacity: 0;
+	pointer-events: none;
+}
+#top_back_fix_in{
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+	left: 0;
+	margin: auto;
+	height: 30px;
+	width: 1px;
+	background-color: #888;
+	transition: all 0.3s ease;
+}
+#top_back_fix_in:before{
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: -8px;
+	margin: 0 auto;
+	height: 12px;
+	width: 1px;
+	background-color: #888;
+	transform: skewX(150deg);
+	transition: all 0.3s ease;
+}
+#top_back_fix_in:after{
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 5px;
+	left: -8px;
+	margin: auto;
+	height: 1px;
+	width: 16px;
+	background-color: #888;
+	transition: all 0.3s ease;
+}
+#top_back_fix:hover > #top_back_fix_in{
+	height: 40px;
+	background-color: #53c6d6;
+}
+#top_back_fix:hover > #top_back_fix_in:before{
+	background-color: #53c6d6;
+}
+#top_back_fix:hover > #top_back_fix_in:after{
+	bottom: 15px;
+	background-color: #53c6d6;
+}
+.top_back_op{
+	opacity: 1 !important;
+	pointer-events: inherit !important;
+}
+
+
+/*========================== footer ==========================*/
+footer{
+	width: 100%;
+	height: 100px;
+	background-color: #2E2E2E;
+	text-align: center;
+	padding: 35px 0 20px 0;
+	position: relative;
+	z-index: 101;
+	top: -50px;
+}
+footer a{
+	display: inline-block;
+	margin: 0 4px;
+	border-radius: 30px;
+	border: 2px solid #444;
+	background-color: #444;
+}
+footer a:hover{
+	background-color: #53c6d6;
+	border: 2px solid #fff;
+}
+footer a img{
+	width: 30px;
+	height: 30px;
+	padding: 8px;
+}
+footer p{
+	font-size: 12px;
+	color: #777;
+	margin: 55px 0 0 0;
+}
+#copyright{
+	color: #888;
+	position: fixed;
+	right: 19px;
+	bottom: 42%;
+	font-size: 10px;
+	letter-spacing: 2px;
+	writing-mode: vertical-rl;
+	text-orientation: sideways;
+}
+
+
+/*========================== プレーヤー ==========================*/
+#audio_space{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 50px;
+	background-color: #fff;
+	z-index: 100000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#audio_space_in{
+	text-align: center;
+	width: 960px;
+	margin: 0 auto;
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.5s ease;
+}
+.audio_op{
+	opacity: 1 !important;
+	pointer-events: inherit !important;
+}
+#audio_title{
+	float: left;
+	margin: 7px 0 0 12px;
+	color: #777;
+	font-size: 11px;
+	letter-spacing: 0.3px;
+	width: 160px;
+}
+
+/*-- 読み込み中文字 --*/
+#progress{
+	position: absolute;
+	top: 6px;
+	left: 0;
+	right: 0;
+	color: #999;
+	font-size: 11px;
+}
+
+/*-- コントローラー部　ボタン共通 --*/
+#audio_play,
+#audio_next,
+#audio_prev,
+#audio_repeat{
+	cursor: pointer;
+	outline: none;
+	float: left;
+	border: 1px solid #fff;
+	transition: all 0.3s ease;
+}
+#audio_next img,
+#audio_prev img{
+	width: 17px;
+}
+#audio_play:hover,
+#audio_next:hover,
+#audio_prev:hover,
+#audio_repeat:hover{
+	background-color: #eee;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+/*-- 再生ボタン --*/
+#audio_play{
+	margin: 2px 7px 0px 7px;
+	padding: 4px 4px 2px 4px;
+}
+#audio_play img{
+	width: 18px;
+}
+/*-- 次曲ボタン --*/
+#audio_next{
+	margin: 1px 0 0 0;
+	padding: 5px 6px 3px 6px;
+}
+/*-- 前曲ボタン --*/
+#audio_prev{
+	margin: 1px 0 0 8px;
+	padding: 5px 6px 3px 6px;
+}
+/*-- リピートボタン --*/
+#audio_repeat{
+	margin: 1px 8px 0 7px;
+	padding: 4px 5px 2px 5px;
+}
+#audio_repeat img{
+	width: 19px;
+}
+.repeat_active{
+	background-color: #eee;
+	border: 1px solid #ddd !important;
+	border-radius: 5px;
+}
+/*-- スピーカー --*/
+#audio_sp{
+	outline: none;
+	float: left;
+	margin: 4px 2px 0 3px;
+}
+#audio_sp img{
+	width: 23px;
+}
+
+/*-- コントローラー部　波形、時間 --*/
+#waveform{
+	position: relative;
+	float: right;
+	width: 452px;
+	margin: 2px 6px 0 0;
+	cursor: pointer;
+}
+.waveform_counter{
+	float: right;
+	margin: 7px 6px 0 0;
+	color: #888;
+	font-size: 10px;
+	letter-spacing: 0.3px;
+}
+.waveform_duration{
+	float: right;
+	margin: 7px 0 0 0;
+	color: #888;
+	font-size: 10px;
+	letter-spacing: 0.3px;
+}
+
+/*-- コントローラー部　音量スライダー --*/
+#volume[type="range"]{
+	-webkit-appearance: none;
+	background-color: #e5e5e5;
+	height: 3px;
+	width: 60px;
+	outline: none;
+	margin: 14px 0 0 0;
+	float: left;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+#volume[type="range"]::-webkit-slider-thumb{
+	-webkit-appearance: none;
+	position: relative;
+	width: 11px;
+	height: 11px;
+	display: block;
+	background-color: #53c6d6;
+	border-radius: 50%;
+}
+#volume[type="range"]:active::-webkit-slider-thumb,
+#volume[type="range"]:hover::-webkit-slider-thumb{
+	box-shadow: 0 0 0 3.5px rgba(83,198,214,0.3);
+	transition: .4s;
+}
+#volume_active{
+	background: #53c6d6;
+	height: 3px;
+	max-width: 90%;
+	width: 35px;
+	display: block;
+	position: relative;
+	left: 186px;
+	top: 14px;
+	cursor: pointer;
+	pointer-events: none;
+}
+/*-- コントローラー部　音量スライダー（firefox） --*/
+#volume[type="range"]::-moz-range-track{
+	appearance: none;
+	-moz-appearance: none;
+	background-color: #e5e5e5;
+}
+#volume[type="range"]::-moz-range-thumb{
+	appearance: none;
+	position: relative;
+	width: 11px;
+	height: 11px;
+	display: block;
+	background-color: #53c6d6;
+	border: none;
+}
+#volume[type="range"]:active::-moz-range-thumb,
+#volume[type="range"]:hover::-moz-range-thumb{
+	box-shadow: 0 0 0 3.5px rgba(83,198,214,0.3);
+	transition: .4s;
+}
+input[type=range]::-moz-focus-outer{
+	border: 0;
+}
+/*-- コントローラー部　音量スライダー（Edge） --*/
+#volume[type="range"]::-ms-thumb{
+	-webkit-appearance: none;
+	position: relative;
+	width: 11px;
+	height: 11px;
+	display: block;
+	background-color: #555;
+	border-radius: 50%;
+	position: absolute;
+}
+input[type=range]::-ms-tooltip{
+	display:none;
+}
+}
+
+
+/*========================== スクロールアニメーション ==========================*/
+/*-- フェードアップ --*/
+h2.delighter{
+	transition: all 0.8s ease-out;
+	opacity: 0;
+	transform: translateY(50px);
+}
+h2.delighter.started{
+	opacity: 1;
+	transform: translateY(0);
+}
+/*-- スライド --*/
+h3.delighter{
+	transition: all 0.6s ease-out;
+	transform: translateX(-100px);
+	opacity: 0;
+}
+h3.delighter.started{
+	transform: translateX(0);
+	opacity: 1;
+}
+
+/*-- Musicスタイル --*/
+.music_frame.delighter{
+	transition: all 1s ease-out;
+	filter: blur(10px);
+}
+.music_frame.delighter.started{
+	filter: blur(0px);
+}
+
+/*-- Discography,participationスタイル --*/
+.disc_fig4.delighter,
+.disc_fig3.delighter,
+.disc_fig2.delighter,
+.disc_fig1.delighter,
+.part_fig2.delighter,
+.part_fig1.delighter{
+	opacity: 0;
+}
+.disc_fig4.delighter,
+.part_fig2.delighter{
+	transition: all 0.5s ease-out;
+	transform: rotateY(200deg);
+}
+.disc_fig3.delighter,
+.part_fig1.delighter{
+	transition: all 1.0s ease-out;
+	transform: rotateY(250deg);
+}
+.disc_fig2.delighter{
+	transition: all 1.5s ease-out;
+	transform: rotateY(300deg);
+}
+.disc_fig1.delighter{
+	transition: all 2.0s ease-out;
+	transform: rotateY(350deg);
+}
+.disc_fig4.delighter.started,
+.disc_fig3.delighter.started,
+.disc_fig2.delighter.started,
+.disc_fig1.delighter.started,
+.part_fig2.delighter.started,
+.part_fig1.delighter.started{
+	opacity: 1;
+	transform: rotateY(0deg);
+} 
+
+/*-- Aboutスタイル --*/
+#about_left.delighter{
+	transition: all 1s ease-out;
+	opacity: 0;
+	transform: translateY(-100px);
+}
+#about_right.delighter{
+	transition: all 1s ease-out;
+	opacity: 0;
+	transform: translateY(100px);
+}
+#about_left.delighter.started,
+#about_right.delighter.started{
+	opacity: 1;
+	transform: translateY(0);
+}
