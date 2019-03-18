@@ -42,8 +42,9 @@ h1{
 	right: 0;
 	margin: auto;
 	font-weight: normal;
-	margin: -10px 0 0 0;
+	margin: 40px 0 0 0;
 	opacity: 0;
+	z-index: 3;
 }
 h1:before{
 	content: "　";
@@ -63,7 +64,7 @@ h1:after{
 	background: rgba(255,255,255,0);
 	top: 50%;
 	left: 50%;
-	z-index: -1;
+	z-index: 2;
 	margin: -124px 0 0 -150px;
 }
 h1 span{
@@ -80,7 +81,7 @@ h1 span{
 
 h2{
 	font-size: 38px;
-	margin: 0 0 80px 0;
+	margin: 20px 0 90px 0;
 	color: #666;
 	font-family: 'Titillium Web';
 	display: inline-block;
@@ -103,19 +104,42 @@ h3{
 	color: #666;
 	font-family: 'Titillium Web';
 	display: inline-block;
-	padding: 15px 0;
+	padding: 15px 0 0 0;
 	width: 250px;
 }
-.h3_back{
-	position: absolute;
-	width: 280px;
-	height: 4px;
-	border-radius: 4px;
-	background-color: #2e2e2e;
-	z-index: -1;
-	left: 0;
-	right: 0;
-	margin: -20px auto 0 auto;
+.music_cat h3:before,
+.music_cat_in h3:before,
+.music_cat_ar h3:before{
+	content: "";
+	width: 0;
+	height: 0;
+	border-style: solid;
+	z-index:  -1;
+	position:  absolute;
+}
+.music_cat h3:before{
+	border-width: 0px 0 50px 30px;
+	border-color: transparent transparent #53c6d6 transparent;
+	transform: rotate(30deg);
+	top: -10px;
+	left: 25px;
+	opacity: 0.5;
+}
+.music_cat_in h3:before{
+	border-width: 0px 0 30px 40px;
+	border-color: transparent transparent #C3ACCE transparent;
+	transform: rotate(60deg);
+	top: -10px;
+	left: -5px;
+	opacity: 0.5;
+}
+.music_cat_ar h3:before{
+	border-width: 0px 5px 40px 40px;
+	border-color: transparent transparent #C2C094 transparent;
+	transform: rotate(15deg);
+	top: -15px;
+	left: 15px;
+	opacity: 0.5;
 }
 
 article{
@@ -133,7 +157,7 @@ body:after{
 	background: #fff;
 	position: fixed;
 	display: block;
-	z-index: 1;
+	z-index: 10;
 	width: 50px;
 	height: 100vh;
 	top: 0;
@@ -176,11 +200,11 @@ body:after{
 	margin-top: -150px;
 }
 #link_2,
-#link_3{
-	padding-top: 10px;
-	margin-top: -10px;
+#link_3,
+#link_4{
+	padding-top: 100px;
+	margin-top: -100px;
 }
-#link_4,
 #link_5,
 #link_6,
 #link_7,
@@ -205,6 +229,21 @@ header{
 	height: 100vh;
 	opacity: 0.8;
 	margin: -50px 0 0 0;
+	background-color: #000;
+	z-index: 1;
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+header:after{
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAKElEQVQYV2NkwA7OMGIRP8PAwGCCLgEWBClGloALIkugCMIkMARBEgCeCgXTiftPxQAAAABJRU5ErkJggg==);
+	z-index: 2;
 }
 header:before{
 	content: "";
@@ -213,9 +252,19 @@ header:before{
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #fff;
-	margin: -50px 0 0 0;
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAKElEQVQYV2NkwA7OMGIRP8PAwGCCLgEWBClGloALIkugCMIkMARBEgCeCgXTiftPxQAAAABJRU5ErkJggg==);
+	background-color: #000;
+	z-index: 0;
+	opacity: 0.4;
+}
+
+/*-- mp4 --*/
+video{
+	position: fixed;
+	min-height: 100%;
+	min-height: 100vh;
+	min-width: 100%;
+	min-width: 100vw;
+	z-index: -2;
 }
 
 /*-- border_アニメ --*/
@@ -225,8 +274,8 @@ header:before{
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	z-index: 0;
-	margin: -114px 0 0 -150px;
+	z-index: 3;
+	margin: -64px 0 0 -150px;
 }
 .title_border_in{
 	position: relative;
@@ -295,19 +344,20 @@ header:before{
 	font-size: 12px;
 	position: absolute;
 	width: 80px;
-	height: 105px;
+	height: 55px;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	margin: 0 auto;
 	letter-spacing: 1px;
 	padding: 15px 0 50px 0;
+	z-index: 3;
 }
 .scroll_guide:before{
 	content: "";
 	position: absolute;
 	width: 1px;
-	height: 80px;
+	height: 30px;
 	bottom: 0;
 	left: 40px;
 	background-color: #777;
@@ -315,20 +365,10 @@ header:before{
 	padding: 0 0 50px 0;
 }
 .scroll_guide:hover{
-	height: 100px;
+	height: 50px;
 }
 .scroll_guide:hover:before{
 	background-color: #53c6d6;
-}
-
-/*-- パララックス背景 --*/
-.parallax{
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;    
-}
-.parallax.bg_top{
-	background: url(images/top_img.png) center 25px/cover no-repeat;
 }
 
 
@@ -339,7 +379,6 @@ header:before{
 	top: -100px;
 	right: 0;
 	left: 0;
-	padding: 0 0 0 0;
 	margin: 50px 0 0 0;
 }
 #info_box{
@@ -477,12 +516,12 @@ nav ul li a:hover{
 /*========================== music ==========================*/
 #music{
 	width: 100%;
-	background-color: #f3f3f3;
+	background: rgba(255,255,255,0.9);
 	position: relative;
 	text-align: center;
-	padding: 160px 0 0 0;
+	padding: 210px 0 0 0;
 	z-index: 4;
-	margin: -140px 0 0 0;
+	margin: -190px 0 0 0;
 }
 
 /*-- 曲一覧のカテゴリー --*/
@@ -493,14 +532,9 @@ nav ul li a:hover{
 	margin: 0 0 22px 0;
 	z-index: 0;
 }
-.music_cat h3{
-	background: rgba(243,243,243,0.9);
-}
-.music_cat_ar h3{
-	background: rgba(250,250,250,0.9);
-}
+.music_cat_ar h3,
 .music_cat_in h3{
-	background: rgba(255,255,255,0.9);
+	padding: 0;
 }
 
 /*-- 各曲フレーム --*/
@@ -520,7 +554,7 @@ nav ul li a:hover{
 	transition: all 0.5s ease;
 	width: 250px;
 	height: 130px;
-	margin: 10px;
+	margin: 12px;
 	cursor: pointer;
 	filter: grayscale(100%);
 	overflow: hidden;
@@ -528,7 +562,7 @@ nav ul li a:hover{
 .music_frame_item:before{
 	content: "";
 	background-color: #fff;
-	opacity: 0.5;
+	opacity: 0.4;
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -540,7 +574,7 @@ nav ul li a:hover{
 	filter: grayscale(0%);
 }
 .music_frame_item:hover:before{
-	opacity: 0.3;
+	opacity: 0.2;
 }
 
 /*-- 曲頭アイコン部分 --*/
@@ -624,7 +658,7 @@ nav ul li a:hover{
 	height: 18px;
 	border-radius: 3px 0 0 3px;
 	box-shadow: -2px 0px 5px -4px #444;
-	background: #f3f3f3;
+	background: #ececec;
 	position: absolute;
 	bottom: 0;
 	overflow: hidden;
@@ -729,10 +763,7 @@ nav ul li a:hover{
 /*====== アレンジ楽曲、インスト楽曲 ======*/
 /*-- 各曲フレーム --*/
 .music_frame_ar{
-	background-color: #fff;
-}
-.music_frame_in{
-	background-color: #fafafa;
+	padding-bottom: 160px;
 }
 .music_frame_item_ar,
 .music_frame_item_in{
@@ -740,7 +771,7 @@ nav ul li a:hover{
 	transition: all 0.5s ease;
 	width: 250px;
 	height: 130px;
-	margin: 10px;
+	margin: 12px;
 	cursor: pointer;
 	filter: grayscale(100%);
 	overflow: hidden;
@@ -749,7 +780,7 @@ nav ul li a:hover{
 .music_frame_item_in:before{
 	content: "";
 	background-color: #fff;
-	opacity: 0.5;
+	opacity: 0.4;
 	position: absolute;;
 	width: 100%;
 	height: 100%;
@@ -789,9 +820,6 @@ nav ul li a:hover{
 }
 
 /*-- リンク部分 --*/
-.music_frame_ar .m_link a{
-	background: #fff !important;
-}
 .music_frame_ar .m_link > a:nth-child(1){
 	bottom: 37px;
 }
@@ -969,14 +997,22 @@ nav ul li a:hover{
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;
-	padding: 70px 0 110px 0;
+	padding: 70px 0 170px 0;
+	z-index: 1;
+	position: relative;
 }
 #discography{
-	z-index: 0;
+	background: url(images/back.jpg) center bottom/cover no-repeat;
 }
 #participation{
-	padding-bottom: 180px;
+	background: url(images/back_2.png) center bottom/cover no-repeat;
 }
+
+#discography h2,
+#participation h2{
+	margin-bottom: 110px;
+}
+/*
 #discography:before,
 #participation:before{
 	content: "";
@@ -986,7 +1022,7 @@ nav ul li a:hover{
 	height: 0;
 	padding-bottom: 600px;
 	transform: skewY(-3deg);
-	z-index: -1;
+	z-index: 0;
 }
 #discography:before{
 	background: url(images/back.jpg) center bottom/cover no-repeat fixed;
@@ -997,9 +1033,9 @@ nav ul li a:hover{
 #discography h2,
 #participation h2{
 	padding-top: 90px;
-}
+}*/
 
-/*-- 背景の図 --*/
+/*-- 背景の図 --*//*
 .back_drawing{
 	content: "";
 	position: absolute;
@@ -1024,7 +1060,7 @@ nav ul li a:hover{
 	border-right: 50vw solid #53c6d6;
 	border-bottom: 3.5vw solid transparent;
 	opacity: 0.3;
-}
+}*/
 
 /*-- 中身 --*/
 .thum_flame{
@@ -1227,7 +1263,7 @@ nav ul li a:hover{
 	text-align: center;
 	background-color: #fff;
 	padding: 70px 0 0 0;
-	z-index: 0;
+	z-index: 1;
 }
 
 /*-- タイトル背面 --*/
@@ -1356,16 +1392,16 @@ nav ul li a:hover{
 footer{
 	width: 100%;
 	height: 100px;
-	background-color: #2E2E2E;
+	background: rgba(46,46,46,0.8);
 	text-align: center;
-	padding: 35px 0 20px 0;
+	padding: 45px 0 45px 0;
 	position: relative;
 	z-index: 101;
 	top: -50px;
 }
 footer a{
 	display: inline-block;
-	margin: 0 4px;
+	margin: 25px 6px 0 6px;
 	border-radius: 30px;
 	border: 2px solid #444;
 	background-color: #444;

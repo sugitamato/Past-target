@@ -184,6 +184,7 @@ h1{
 	font-weight: normal;
 	margin: 25px 0 0 0;
 	opacity: 0;
+	z-index: 1;
 }
 h1:before{
 	content: "　";
@@ -245,20 +246,41 @@ h3{
 	display: inline-block;
 	padding: 15px 0;
 	width: 250px;
-	background: rgba(255,255,255,0.9);
-	z-index: 1;
 	position: relative;
 }
-.h3_back{
-	position: absolute;
-	width: 280px;
-	height: 3px;
-	border-radius: 4px;
-	background-color: #2e2e2e;
-	z-index: 0;
-	left: 0;
-	right: 0;
-	margin: -20px auto 0 auto;
+.music_cat h3:before,
+.music_cat_in h3:before,
+.music_cat_ar h3:before{
+	content: "";
+	width: 0;
+	height: 0;
+	border-style: solid;
+	z-index:  -1;
+	position:  absolute;
+}
+.music_cat h3:before{
+	border-width: 0px 0 40px 20px;
+	border-color: transparent transparent #53c6d6 transparent;
+	transform: rotate(30deg);
+	top: -5px;
+	left: 40px;
+	opacity: 0.5;
+}
+.music_cat_in h3:before{
+	border-width: 0px 0 20px 30px;
+	border-color: transparent transparent #C3ACCE transparent;
+	transform: rotate(60deg);
+	top: 10px;
+	left: 10px;
+	opacity: 0.5;
+}
+.music_cat_ar h3:before{
+	border-width: 0px 5px 30px 30px;
+	border-color: transparent transparent #C2C094 transparent;
+	transform: rotate(15deg);
+	top: 5px;
+	left: 25px;
+	opacity: 0.5;
 }
 
 section{
@@ -286,10 +308,6 @@ section:last-child{
 	padding-top: 100px;
 	margin-top: -100px;
 }
-#link_8{
-	padding-top: 87px;
-	margin-top: -87px;
-}
 
 /*-- float解除 --*/
 .clearfix:after{
@@ -307,20 +325,28 @@ header{
 	margin: -50px 0 0 0;
 	height: 400px;
 	opacity: 0.8;
+	z-index: -1;
 	position: relative;
+	display: flex;
+	justify-content: center;
 }
-header:before{
+header:after{
 	content: "";
 	position: absolute;
 	left: 0;
 	top: 0;
 	width: 100%;
 	height: 100%;
-	margin: -50px 0 0 0;
+	margin: -40px 0 0 0;
 	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAKElEQVQYV2NkwA7OMGIRP8PAwGCCLgEWBClGloALIkugCMIkMARBEgCeCgXTiftPxQAAAABJRU5ErkJggg==);
 }
 .parallax.bg_top{
 	background: url(images/top_img.png) center 25px/cover no-repeat;
+}
+
+/*-- mp4 --*/
+video{
+	display: none;
 }
 
 /*-- border_アニメ --*/
@@ -330,7 +356,7 @@ header:before{
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	z-index: 0;
+	z-index: 1;
 	margin: -55px 0 0 -110px;
 }
 .title_border_in{
@@ -404,7 +430,7 @@ header:before{
 #info{
 	position: relative;
 	z-index: 5;
-	top: -77px;
+	top: -75px;
 	right: 0;
 	left: 0;
 	margin: 30px 0 0 0;
@@ -460,6 +486,7 @@ header:before{
 #info_box::-webkit-scrollbar-thumb{
 	background: #666;
 	box-shadow: none;
+	border-radius: 5px;
 }
 .info_active{
 	overflow-y: scroll !important;
@@ -649,8 +676,8 @@ nav ul li .active:after{
 	width: 30.3%;
 	height: 11px;
 	color: #666;
-	border: 1px solid #aaa;
-	background: rgba(255,255,255,0.7);
+	border: 1px solid #bbb;
+	background: rgba(255,255,255,0.8);
 	padding: 7px 0;
 	margin: 0 1%;
 	border-radius: 3px;
@@ -871,7 +898,7 @@ nav ul li .active:after{
 .parallax {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-size: cover;    
+	background-size: cover;
 }
 .parallax.bg_1{
 	background: url(images/back.jpg) center bottom/cover no-repeat;

@@ -1,6 +1,6 @@
 $(function(){
   /*-- モーダルウィンドウ --*/
-  $(".inline").colorbox({
+  $('.inline').colorbox({
     inline: true,
     maxWidth: "94%",
     maxHeight: "80%",
@@ -8,7 +8,7 @@ $(function(){
     opacity: 1,
   });
   /*-- モーダルウィンドウ　（コンタクト用） --*/
-  $(".iframe").modaal({
+  $('.iframe').modaal({
     type:'iframe',
     width: 700,
     height: 570,
@@ -153,7 +153,7 @@ $(function(){
   });
 
   /*-- パララックス --*/
-  var target_top = $("header");
+  var target_top = $(".parallax");
   var targetPosOT_top = target_top.offset().top;
   var target1 = $("#discography");
   var targetPosOT1 = target1.offset().top;
