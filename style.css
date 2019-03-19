@@ -531,6 +531,8 @@ nav ul li a:hover{
 	width: 100%;
 	margin: 0 0 22px 0;
 	z-index: 0;
+	display: flex;
+	justify-content: center;
 }
 .music_cat_ar h3,
 .music_cat_in h3{
@@ -888,7 +890,7 @@ nav ul li a:hover{
 	left: 1px;
 }
 .music_frame_item:hover > .playlist .music_play,
-.music_frame_item_ar:hover > .playlist_ar .music_play,
+.music_frame_item_ar:hover > .playlist .music_play,
 .music_frame_item_in:hover > .playlist .music_play{
 	opacity: 1;
 }
@@ -896,7 +898,7 @@ nav ul li a:hover{
 	opacity: 1 !important;
 }
 .playlist.active .music_play,
-.playlist_ar.active .music_play{
+.playlist.active .music_play{
 	opacity: 1 !important;
 }
 
@@ -906,7 +908,7 @@ nav ul li a:hover{
 	filter: grayscale(0%) !important;
 }
 .m_current:before{
-	opacity: 0.3 !important;
+	opacity: 0.2 !important;
 }
 .m_current > .music_title{
 	background: rgba(255,255,255,0.7) !important;
@@ -935,6 +937,20 @@ nav ul li a:hover{
 	height: 100%;
 	border-radius: 5px;
 	z-index: 1;
+}
+/*-- 一時停止 --*/
+.playlist_stop{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	z-index: 2;
+	display: none;
+}
+.stop_hide{
+	display: inherit !important;
 }
 
 
@@ -1012,55 +1028,6 @@ nav ul li a:hover{
 #participation h2{
 	margin-bottom: 110px;
 }
-/*
-#discography:before,
-#participation:before{
-	content: "";
-	position: absolute;
-	left: 0;
-	width: 100%;
-	height: 0;
-	padding-bottom: 600px;
-	transform: skewY(-3deg);
-	z-index: 0;
-}
-#discography:before{
-	background: url(images/back.jpg) center bottom/cover no-repeat fixed;
-}
-#participation:before{
-	background: url(images/back_2.png) center bottom/cover no-repeat fixed;
-}
-#discography h2,
-#participation h2{
-	padding-top: 90px;
-}*/
-
-/*-- 背景の図 --*//*
-.back_drawing{
-	content: "";
-	position: absolute;
-	left: 0;
-	width: 100%;
-	height: 0;
-	padding-bottom: 400px;
-	transform: skewY(3deg);
-	background-color: #2e2e2e;
-	margin: 35px 0 0 0;
-	z-index: -1;
-}
-.back_drawing_2{
-	content: "";
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 100%;
-	height: 0;
-	z-index: -1;
-	border-top: 3vw solid transparent;
-	border-right: 50vw solid #53c6d6;
-	border-bottom: 3.5vw solid transparent;
-	opacity: 0.3;
-}*/
 
 /*-- 中身 --*/
 .thum_flame{
@@ -1465,14 +1432,48 @@ footer p{
 	width: 160px;
 }
 
-/*-- 読み込み中文字 --*/
-#progress{
+/*-- 読み込み中_プログレスバー --*/
+#progress_bar ul{
 	position: absolute;
-	top: 6px;
-	left: 0;
-	right: 0;
-	color: #999;
-	font-size: 11px;
+	top: 7px;
+	display: block;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+@keyframes preload{
+	0%{
+		background: #53c6d6;
+		opacity: 1;
+	}50%{
+		background: #fff;
+		opacity: 0.5;
+	}100%{
+		background: #53c6d6;
+		opacity: 1;
+	}
+}
+#progress_bar ul li{
+	opacity: 0.5;
+	display: block;
+	float: left;
+	width: 11px;
+	height: 11px;
+	position: relative;
+	margin: 0 2.5px;
+	animation: preload 1s infinite;
+	border-radius: 50%;
+}
+#progress_bar ul li:first-child{
+	margin-left: 0;
+}
+#progress_bar ul li:nth-child(2){
+	animation-delay: .15s;
+}
+#progress_bar ul li:nth-child(3){
+	animation-delay: .3s;
 }
 
 /*-- コントローラー部　ボタン共通 --*/

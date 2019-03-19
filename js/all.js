@@ -209,13 +209,6 @@ document.addEventListener('DOMContentLoaded', function(){
     var volume = "#volume";
     if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){
       wavesurfer.setVolume(1);//スマホ初期音量
-    }else{
-      if($(volume).hasClass('vol_val')){
-      }else{
-        document.querySelector(volume).value = '0.5';
-        wavesurfer.setVolume(0.5);//PC初期音量
-        $(volume).addClass('vol_val');
-      }
     }
     var volumeInput = document.querySelector(volume);
     var onChangeVolume = function (e) {
@@ -223,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function(){
     };
     volumeInput.addEventListener('input', onChangeVolume);
     volumeInput.addEventListener('change', onChangeVolume);
-    document.getElementById('progress').style.display = 'none';//読み込み中非表示
+    document.getElementById('progress_bar').style.display = 'none';//読み込み中非表示
   });
 
   //再生ボタン(固定プレーヤー)
@@ -239,15 +232,27 @@ document.addEventListener('DOMContentLoaded', function(){
     $('#audio_play img').attr('src','images/audio_con/con_play.png');
   });
   //再生ボタン(各曲)
-  var m_bt = '.playlist, .playlist_ar';
+  var m_bt = '.playlist';
   var m_play_bt = 'm_play_bt';
   var m_current = 'm_current';
   $(m_bt).on('click',function(){
     $(m_bt).children('img').removeClass(m_play_bt);
     $(this).children('img').addClass(m_play_bt);
-    $(m_bt).parent('li').removeClass(m_current);
-    $(this).parent('li').addClass(m_current);
-    document.getElementById('progress').style.display = 'inherit';//読み込み中表示
+    $(m_bt).parent().removeClass(m_current);
+    $(this).parent().addClass(m_current);
+    document.getElementById('progress_bar').style.display = 'inherit';//読み込み中表示
+  });
+
+  //停止ボタン(各曲)
+  var m_bt_stop = '.playlist_stop';
+  $(m_bt_stop).on('click',function(){
+    wavesurfer.playPause();
+  });
+  wavesurfer.on('audioprocess', function (){
+    $(links[currentTrack]).find('img').attr('src','images/audio_con/m_stop.png');
+  });
+  wavesurfer.on('pause', function (){
+    $(links[currentTrack]).find('img').attr('src','images/audio_con/m_play.png');
   });
 
   //表示時間
@@ -267,18 +272,25 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 
   //プレイリスト化
+  var stop_hide = 'stop_hide';
   var links = document.querySelectorAll(m_bt);
   var currentTrack = 0;
   var setCurrentSong = function(index){
     links[currentTrack].classList.remove('active');
     currentTrack = index;
-    $(m_bt).children('img').removeClass(m_play_bt);//カレント再生ボタン
+
+    $(m_bt).children('img').removeClass(m_play_bt);//カレント再生ボタン_リセット
+    $(m_bt_stop).removeClass(stop_hide);//カレント停止ボタン_リセット
+    $(m_bt).parent().removeClass(m_current);//カレント諸々_リセット
+    $('.music_play img').attr('src','images/audio_con/m_play.png');//全再生アイコン_リセット
+
     links[currentTrack].classList.add('active');
-    $(m_bt).parent().removeClass(m_current);//カレント諸々
     $(links[currentTrack]).parent().addClass(m_current);
+    $(links[currentTrack]).next().addClass(stop_hide);
+
     wavesurfer.load(links[currentTrack].name);//ここで曲読み込み
-    document.getElementById("audio_title").innerText = $(links[currentTrack]).prev().text();//曲名表示
-    document.getElementById('progress').style.display = 'inherit';//読み込み中表示
+    document.getElementById('audio_title').innerText = $(links[currentTrack]).prev().text();//曲名表示
+    document.getElementById('progress_bar').style.display = 'inherit';//読み込み中表示
     wavesurfer.on('ready', function () {
       wavesurfer.play();//ここで再生
     });
@@ -315,7 +327,7 @@ document.addEventListener('DOMContentLoaded', function(){
 var timer = null;
 var vol_input = document.getElementById("volume");
 var prev_val = vol_input.value;
-vol_input.addEventListener("focus", function(){
+$(window).on("load", function(){
   window.clearInterval(timer);
   timer = window.setInterval(function(){
     var new_val = vol_input.value;
@@ -327,15 +339,13 @@ vol_input.addEventListener("focus", function(){
       b_r = (b_r*b_v);
       var bright_bar = document.getElementById("volume_active");
       bright_bar.style.width = b_r+"px";
-      change_img.style.webkitFilter = "brightness("+b_v+"%)";
     }
-    prev_value = new_value;
   }, 1);
-}, false);
+});
 
 //アイコン変化
 $('#volume').on('input change', function(){
-  var vol_img = document.getElementById("volume").value;
+  var vol_img = vol_input.value;
   var speaker = "#audio_sp img";
   if(vol_img == 0){
     $(speaker).attr('src','images/audio_con/con_sp_0.png');
@@ -357,3 +367,30 @@ $(window).on('load', function(){
 
 /*-- パララックス --*/
 $(window).enllax();
+
+/*-- cookie --*/
+$(function(){
+  //cookie保存
+  $('#volume').on('mouseup', function(){
+    Cookies.set('volumebar_cookie',vol_input.value);
+    Cookies.set('volume_cookie',wavesurfer.getVolume());
+  });
+  //音量スライダー
+  $('#volume').val(Cookies.get('volumebar_cookie'));
+  //音量スライダーアイコン
+  var vol_img = vol_input.value;
+  var speaker = '#audio_sp img';
+  if(vol_img == 0){
+    $(speaker).attr('src','images/audio_con/con_sp_0.png');
+  }else if(vol_img > 0.51){
+    $(speaker).attr('src','images/audio_con/con_sp_100.png');
+  }else{
+    $(speaker).attr('src','images/audio_con/con_sp_50.png');
+  }
+  //音量
+  if(Cookies.get("volume_cookie") == ''){
+    wavesurfer.setVolume(0.5);
+  }else{
+    wavesurfer.setVolume(Cookies.get('volume_cookie'));
+  }
+});
