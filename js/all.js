@@ -191,6 +191,30 @@ $(function(){
       $(this).removeClass('info_active');
     }
   });
+
+  /*-- cookie保存 --*/
+  $('#volume').on('mouseup', function(){
+    Cookies.set('volumebar_cookie',vol_input.value,{ expires: 365 });
+    Cookies.set('volume_cookie',wavesurfer.getVolume(),{ expires: 365 });
+  });
+  //音量スライダー
+  $('#volume').val(Cookies.get('volumebar_cookie'));
+  //音量スライダーアイコン
+  var vol_img = vol_input.value;
+  var speaker = '#audio_sp img';
+  if(vol_img == 0){
+    $(speaker).attr('src','images/audio_con/con_sp_0.png');
+  }else if(vol_img > 0.51){
+    $(speaker).attr('src','images/audio_con/con_sp_100.png');
+  }else{
+    $(speaker).attr('src','images/audio_con/con_sp_50.png');
+  }
+  //音量
+  if(Cookies.get("volume_cookie") == ''){
+    wavesurfer.setVolume(0.5);
+  }else{
+    wavesurfer.setVolume(Cookies.get('volume_cookie'));
+  }
 });
 
 /*-- WaveSurfer（プレーヤー設定） --*/
@@ -367,30 +391,3 @@ $(window).on('load', function(){
 
 /*-- パララックス --*/
 $(window).enllax();
-
-/*-- cookie --*/
-$(function(){
-  //cookie保存
-  $('#volume').on('mouseup', function(){
-    Cookies.set('volumebar_cookie',vol_input.value,{ expires: 365 });
-    Cookies.set('volume_cookie',wavesurfer.getVolume(),{ expires: 365 });
-  });
-  //音量スライダー
-  $('#volume').val(Cookies.get('volumebar_cookie'));
-  //音量スライダーアイコン
-  var vol_img = vol_input.value;
-  var speaker = '#audio_sp img';
-  if(vol_img == 0){
-    $(speaker).attr('src','images/audio_con/con_sp_0.png');
-  }else if(vol_img > 0.51){
-    $(speaker).attr('src','images/audio_con/con_sp_100.png');
-  }else{
-    $(speaker).attr('src','images/audio_con/con_sp_50.png');
-  }
-  //音量
-  if(Cookies.get("volume_cookie") == ''){
-    wavesurfer.setVolume(0.5);
-  }else{
-    wavesurfer.setVolume(Cookies.get('volume_cookie'));
-  }
-});
