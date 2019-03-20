@@ -372,8 +372,8 @@ $(window).enllax();
 $(function(){
   //cookie保存
   $('#volume').on('mouseup', function(){
-    Cookies.set('volumebar_cookie',vol_input.value);
-    Cookies.set('volume_cookie',wavesurfer.getVolume());
+    Cookies.set('volumebar_cookie',vol_input.value,{ expires: 365 });
+    Cookies.set('volume_cookie',wavesurfer.getVolume(),{ expires: 365 });
   });
   //音量スライダー
   $('#volume').val(Cookies.get('volumebar_cookie'));
