@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function(){
+$(function(){
   /*-- モーダルウィンドウ --*/
   $('.inline').colorbox({
     inline: true,
@@ -16,9 +16,6 @@ document.addEventListener('DOMContentLoaded', function(){
     overlay_opacity: '0.8',
     overlay_close: false,
   });
-  });
-$(function(){
-
 
   /*-- モーダルウィンドウ　背景画像_各曲 --*/
   var bgImg = $('.modal_img_frame img');
