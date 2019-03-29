@@ -293,8 +293,8 @@ section:last-child{
 
 /*-- ページ内リンクのずれ対策 --*/
 #link_1{
-	padding-top: 117px;
-	margin-top: -117px;
+	padding-top: 115px;
+	margin-top: -115px;
 }
 #link_2,
 #link_3,
@@ -439,25 +439,28 @@ video{
 }
 #info_box{
 	background-color: #fff;
-	height: 105px;
+	height: 95px;
 	margin: 0 auto;
 	color: #333;
 	overflow-x: hidden;
-	overflow-y: scroll;
+	overflow-y: hidden;
 	font-size: 10px;
 	letter-spacing: 0px;
 	list-style: none;
+	padding: 5px 0;
 }
 #info_box li{
-	padding: 12px 0 12px 10px;
+	padding: 12px 0 12px 5px;
 	border-bottom: 1px solid #e5e5e5;
 }
-
+#info_box li:first-child{
+	padding: 7px 0 12px 5px;
+}
 #info_box li:last-child{
-	padding: 12px 0 13px 10px;
+	padding: 12px 0 8px 5px;
 	border-bottom: none;
 }
-#info_box span{
+#info_box time{
 	background-color: #2e2e2e;
 	border-radius: 10px;
 	padding: 1px 8px 3px 8px;
@@ -473,23 +476,6 @@ video{
 #info_box a:active{
 	color: #53c6d6;
 	border-bottom: 1px dashed #53c6d6;
-}
-
-/*-- ボックススクロールバー --*/
-#info_box::-webkit-scrollbar{
-	width: 5px;
-}
-#info_box::-webkit-scrollbar-track{
-	background: #fff;
-	border: none;
-}
-#info_box::-webkit-scrollbar-thumb{
-	background: #666;
-	box-shadow: none;
-	border-radius: 5px;
-}
-.info_active{
-	overflow-y: scroll !important;
 }
 
 /*-- info タイトル --*/

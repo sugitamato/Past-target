@@ -183,13 +183,10 @@ $(function(){
     }
   });
 
-  /*-- infoのスクロールバー --*/
-  $('#info_box').on({
-    'mouseenter' : function(){
-      $(this).addClass('info_active');
-    },'mouseleave' : function(){
-      $(this).removeClass('info_active');
-    }
+  /*-- info_スクロールバースタイル --*/
+  $('#info_box').mCustomScrollbar({
+    theme:'rounded-dots-dark',
+    setLeft: '5px',
   });
 
   /*-- cookie保存 --*/
