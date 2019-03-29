@@ -97,11 +97,10 @@
     width: 5px;
 }
 #cboxLoadedContent::-webkit-scrollbar-track{
-    background: #fff;
-    border-left: solid 1px #ddd;
+    background:rgba(255,255,255,0);
 }
 #cboxLoadedContent::-webkit-scrollbar-thumb{
-    background: #ccc;
+    background: #999;
     box-shadow: inset 0 0 2px #888;
 }
 #cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose , #cboxTitle {
