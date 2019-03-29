@@ -844,12 +844,6 @@ nav ul li a:hover{
 	min-height: 100%;
 	cursor: pointer;
 	animation: fadein 1s linear 0s 1;
-
-	background-repeat: no-repeat;
-	background-position: center bottom;
-	background-size: cover;
-	opacity: 0.5;
-	filter: blur(7px);
 }
 @keyframes fadein{
 	0%{
@@ -858,7 +852,7 @@ nav ul li a:hover{
 	100% {
 		opacity:1;
 	}
-}/*
+}
 .modal_img_frame img,
 .modal_img_frame2 img{
 	position: relative;
@@ -867,17 +861,6 @@ nav ul li a:hover{
 	opacity: 0.5;
 	filter: blur(7px);
 }
-
-.modal_img_frame div{
-	position: relative;
-	width: 100%;
-	height: auto;
-	opacity: 0.5;
-	filter: blur(7px);
-	background-repeat: no-repeat;
-	background-position: center bottom;
-	background-size: cover;
-}*/
 
 
 /*========================== プレーヤー関連部分 ==========================*/
