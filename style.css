@@ -1641,13 +1641,13 @@ input[type=range]::-ms-tooltip{
 /*========================== スクロールアニメーション ==========================*/
 /*-- フェードアップ --*/
 h2.delighter,
-footer img.delighter{
+.music_frame_item.delighter{
 	transition: all 0.8s ease-out;
 	opacity: 0;
 	transform: translateY(50px);
 }
 h2.delighter.started,
-footer img.delighter.started{
+.music_frame_item.delighter.started{
 	opacity: 1;
 	transform: translateY(0);
 }
