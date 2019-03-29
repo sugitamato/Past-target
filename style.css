@@ -946,8 +946,8 @@ nav ul li a:hover{
 }
 
 
-/*========================== 各曲画像 ==========================*/
-/*.music_frame_item:nth-last-child(42){background: url(images/m_bg/bg44.jpg) 0px 0px/cover #fff round no-repeat border-box;}*/
+/*========================== 各曲画像 ==========================*//*
+.music_frame_item:nth-last-child(42){background: url(images/m_bg/bg44.jpg) 0px 0px/cover #fff round no-repeat border-box;}
 .music_frame_item:nth-last-child(41){background: url(images/m_bg/bg43.jpg) 0px 0px/cover #fff round no-repeat border-box;}
 .music_frame_item:nth-last-child(40){background: url(images/m_bg/bg42.jpg) 0px 0px/cover #fff round no-repeat border-box;}
 .music_frame_item:nth-last-child(39){background: url(images/m_bg/bg41.jpg) 0px 0px/cover #fff round no-repeat border-box;}
@@ -990,13 +990,13 @@ nav ul li a:hover{
 .music_frame_item:nth-last-child(2){background: url(images/m_bg/bg4.jpg) 0px 0px/cover #fff round no-repeat border-box;}
 .music_frame_item:nth-last-child(1){background: url(images/m_bg/bg3.jpg) 0px 0px/cover #fff round no-repeat border-box;}
 
-/*.music_frame_item_in:nth-last-child(4){background: url(images/m_bg/bg_in4.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item_in:nth-last-child(4){background: url(images/m_bg/bg_in4.jpg) 0px 0px/cover #fff round no-repeat border-box;}
 .music_frame_item_in:nth-last-child(3){background: url(images/m_bg/bg_in3.jpg) 0px 0px/cover #fff round no-repeat border-box;}
 .music_frame_item_in:nth-last-child(2){background: url(images/m_bg/bg_in2.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item_in:nth-last-child(1){background: url(images/m_bg/bg_in1.jpg) 0px 0px/cover #fff round no-repeat border-box;}*/
+.music_frame_item_in:nth-last-child(1){background: url(images/m_bg/bg_in1.jpg) 0px 0px/cover #fff round no-repeat border-box;}
 
 .music_frame_item_ar:nth-last-child(2){background: url(images/m_bg/bg_ar2.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item_ar:nth-last-child(1){background: url(images/m_bg/bg_ar1.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+.music_frame_item_ar:nth-last-child(1){background: url(images/m_bg/bg_ar1.jpg) 0px 0px/cover #fff round no-repeat border-box;}*/
 
 
 /*========================== discography、participation ==========================*/
