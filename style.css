@@ -544,6 +544,10 @@ nav ul li a:hover{
 	cursor: pointer;
 	filter: grayscale(100%);
 	overflow: hidden;
+	background-position: 0px 0px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-clip: border-box;
 }
 .music_frame_item:before{
 	content: "";
@@ -939,7 +943,7 @@ nav ul li a:hover{
 
 
 /*========================== 各曲画像 ==========================*/
-.music_frame_item:nth-last-child(42){background: url(images/m_bg/bg44.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+/*.music_frame_item:nth-last-child(42){background: url(images/m_bg/bg44.jpg) 0px 0px/cover #fff round no-repeat border-box;}*/
 .music_frame_item:nth-last-child(41){background: url(images/m_bg/bg43.jpg) 0px 0px/cover #fff round no-repeat border-box;}
 .music_frame_item:nth-last-child(40){background: url(images/m_bg/bg42.jpg) 0px 0px/cover #fff round no-repeat border-box;}
 .music_frame_item:nth-last-child(39){background: url(images/m_bg/bg41.jpg) 0px 0px/cover #fff round no-repeat border-box;}
@@ -1000,13 +1004,17 @@ nav ul li a:hover{
 	padding: 70px 0 170px 0;
 	z-index: 1;
 	position: relative;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	background-size: cover;
 }
+/*
 #discography{
 	background: url(images/back.jpg) center bottom/cover no-repeat;
 }
 #participation{
 	background: url(images/back_2.png) center bottom/cover no-repeat;
-}
+}*/
 
 #discography h2,
 #participation h2{
@@ -1628,12 +1636,14 @@ input[type=range]::-ms-tooltip{
 
 /*========================== スクロールアニメーション ==========================*/
 /*-- フェードアップ --*/
-h2.delighter{
+h2.delighter,
+footer img.delighter{
 	transition: all 0.8s ease-out;
 	opacity: 0;
 	transform: translateY(50px);
 }
-h2.delighter.started{
+h2.delighter.started,
+footer img.delighter.started{
 	opacity: 1;
 	transform: translateY(0);
 }
