@@ -990,10 +990,10 @@ nav ul li a:hover{
 .music_frame_item:nth-last-child(2){background: url(images/m_bg/bg4.jpg) 0px 0px/cover #fff round no-repeat border-box;}
 .music_frame_item:nth-last-child(1){background: url(images/m_bg/bg3.jpg) 0px 0px/cover #fff round no-repeat border-box;}
 
-.music_frame_item_in:nth-last-child(4){background: url(images/m_bg/bg_in4.jpg) 0px 0px/cover #fff round no-repeat border-box;}
+/*.music_frame_item_in:nth-last-child(4){background: url(images/m_bg/bg_in4.jpg) 0px 0px/cover #fff round no-repeat border-box;}
 .music_frame_item_in:nth-last-child(3){background: url(images/m_bg/bg_in3.jpg) 0px 0px/cover #fff round no-repeat border-box;}
 .music_frame_item_in:nth-last-child(2){background: url(images/m_bg/bg_in2.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-/*.music_frame_item_in:nth-last-child(1){background: url(images/m_bg/bg_in1.jpg) 0px 0px/cover #fff round no-repeat border-box;}*/
+.music_frame_item_in:nth-last-child(1){background: url(images/m_bg/bg_in1.jpg) 0px 0px/cover #fff round no-repeat border-box;}*/
 
 .music_frame_item_ar:nth-last-child(2){background: url(images/m_bg/bg_ar2.jpg) 0px 0px/cover #fff round no-repeat border-box;}
 .music_frame_item_ar:nth-last-child(1){background: url(images/m_bg/bg_ar1.jpg) 0px 0px/cover #fff round no-repeat border-box;}
