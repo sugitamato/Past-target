@@ -126,16 +126,6 @@ $(function(){
       $(topBtn).removeClass('top_back_op');
     }
   });
-   /*-- 固定オーディオフェード --*/ 
-  if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){
-  }else{
-    var audio_space_in = $('#audio_space_in');
-    $(window).scroll(function(){
-    if ($(window).scrollTop() > 100){
-      $(audio_space_in).addClass('audio_op');
-    }
-  });
-  }
 
   /*-- colorbox時の背景固定 --*/
   var current_scrollY;
@@ -225,7 +215,6 @@ var wavesurfer = WaveSurfer.create({
 
 /*-- WaveSurfer --*/
 document.addEventListener('DOMContentLoaded', function(){
-  //wavesurfer.load("https://dl.dropboxusercontent.com/s/sl80felytnydlxo/%E6%9E%B6%E7%A9%BA.mp3");//デフォルト曲
   wavesurfer.on('ready', function(){
     var volume = "#volume";
     if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){
@@ -257,6 +246,7 @@ document.addEventListener('DOMContentLoaded', function(){
   var m_play_bt = 'm_play_bt';
   var m_current = 'm_current';
   $(m_bt).on('click',function(){
+    $('#audio_space_in').addClass('audio_op');//初回のオーディオ表示
     $(m_bt).children('img').removeClass(m_play_bt);
     $(this).children('img').addClass(m_play_bt);
     $(m_bt).parent().removeClass(m_current);
