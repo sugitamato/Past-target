@@ -225,7 +225,7 @@ var wavesurfer = WaveSurfer.create({
 
 /*-- WaveSurfer --*/
 document.addEventListener('DOMContentLoaded', function(){
-  wavesurfer.load("https://dl.dropboxusercontent.com/s/sl80felytnydlxo/%E6%9E%B6%E7%A9%BA.mp3");//デフォルト曲
+  //wavesurfer.load("https://dl.dropboxusercontent.com/s/sl80felytnydlxo/%E6%9E%B6%E7%A9%BA.mp3");//デフォルト曲
   wavesurfer.on('ready', function(){
     var volume = "#volume";
     if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){
