@@ -246,12 +246,16 @@ document.addEventListener('DOMContentLoaded', function(){
   var m_play_bt = 'm_play_bt';
   var m_current = 'm_current';
   $(m_bt).on('click',function(){
-    $('#audio_space_in').addClass('audio_op');//初回のオーディオ表示
     $(m_bt).children('img').removeClass(m_play_bt);
     $(this).children('img').addClass(m_play_bt);
     $(m_bt).parent().removeClass(m_current);
     $(this).parent().addClass(m_current);
     document.getElementById('progress_bar').style.display = 'inherit';//読み込み中表示
+    if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){
+      $('#audio_space').addClass('audio_op_sp');//初回のオーディオ表示_sp
+    }else{
+      $('#audio_space_in').addClass('audio_op');//初回のオーディオ表示_pc
+    }
   });
 
   //停止ボタン(各曲)
