@@ -593,6 +593,10 @@ nav ul li .active:after{
 	height: 52px;
 	background-color: #fff;
 	margin: 0 0 7px 0;
+	background-position: 0px 0px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-clip: border-box;
 }
 .music_frame_item:before,
 .music_frame_item_ar:before,
@@ -786,6 +790,10 @@ nav ul li .active:after{
 	position: relative;
 	background-color: #fff;
 	margin: 0 0 7px 0;
+	background-position: 0px 0px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-clip: border-box;
 }
 .music_frame_item_ar{
 	height: 67px;
@@ -820,77 +828,17 @@ nav ul li .active:after{
 }
 
 
-/*========================== 各曲画像 ==========================*/
-.music_frame_item:nth-last-child(42){background: url(images/m_bg/bg44.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(41){background: url(images/m_bg/bg43.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(40){background: url(images/m_bg/bg42.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(39){background: url(images/m_bg/bg41.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(38){background: url(images/m_bg/bg40.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(37){background: url(images/m_bg/bg39.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(36){background: url(images/m_bg/bg38.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(35){background: url(images/m_bg/bg37.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(34){background: url(images/m_bg/bg36.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(33){background: url(images/m_bg/bg35.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(32){background: url(images/m_bg/bg34.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(31){background: url(images/m_bg/bg33.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(30){background: url(images/m_bg/bg32.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(29){background: url(images/m_bg/bg31.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(28){background: url(images/m_bg/bg30.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(27){background: url(images/m_bg/bg29.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(26){background: url(images/m_bg/bg28.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(25){background: url(images/m_bg/bg27.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(24){background: url(images/m_bg/bg26.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(23){background: url(images/m_bg/bg25.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(22){background: url(images/m_bg/bg24.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(21){background: url(images/m_bg/bg23.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(20){background: url(images/m_bg/bg22.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(19){background: url(images/m_bg/bg21.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(18){background: url(images/m_bg/bg20.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(17){background: url(images/m_bg/bg19.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(16){background: url(images/m_bg/bg18.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(15){background: url(images/m_bg/bg17.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(14){background: url(images/m_bg/bg16.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(13){background: url(images/m_bg/bg15.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(12){background: url(images/m_bg/bg14.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(11){background: url(images/m_bg/bg13.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(10){background: url(images/m_bg/bg12.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(9){background: url(images/m_bg/bg11.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(8){background: url(images/m_bg/bg10.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(7){background: url(images/m_bg/bg9.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(6){background: url(images/m_bg/bg8.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(5){background: url(images/m_bg/bg7.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(4){background: url(images/m_bg/bg6.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(3){background: url(images/m_bg/bg5.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(2){background: url(images/m_bg/bg4.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item:nth-last-child(1){background: url(images/m_bg/bg3.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-
-.music_frame_item_in:nth-last-child(4){background: url(images/m_bg/bg_in4.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item_in:nth-last-child(3){background: url(images/m_bg/bg_in3.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item_in:nth-last-child(2){background: url(images/m_bg/bg_in2.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item_in:nth-last-child(1){background: url(images/m_bg/bg_in1.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-
-.music_frame_item_ar:nth-last-child(2){background: url(images/m_bg/bg_ar2.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-.music_frame_item_ar:nth-last-child(1){background: url(images/m_bg/bg_ar1.jpg) 0px 0px/cover #fff round no-repeat border-box;}
-
-
 /*========================== discography、participation ==========================*/
 #discography,
 #participation{
 	width: 100%;
 	margin: 0 auto;
 }
-
 /*-- パララックス背景 --*/
-.parallax {
+.parallax{
 	background-repeat: no-repeat;
-	background-attachment: fixed;
 	background-size: cover;
-}
-.parallax.bg_1{
-	background: url(images/back.jpg) center bottom/cover no-repeat;
-}
-.parallax.bg_2{
-	background: url(images/back_2.png) center bottom/cover no-repeat;
+	background-position: center bottom;
 }
 
 /*-- サムネイル --*/
