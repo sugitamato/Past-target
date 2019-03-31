@@ -152,7 +152,7 @@ $(function(){
       $('.modal_img_frame img').attr('src',lyric_num_in_ar);
     });
     //Discography
-    $('#participation ul li').on('click',function(){
+    $('#discography ul li').on('click',function(){
       var disc_ori = $('#discography ul li');
       var disc_num = (disc_ori.length -disc_ori.index(this));
       var disc_num_in = 'images/al' + disc_num + '.jpg';
