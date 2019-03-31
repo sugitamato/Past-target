@@ -73,6 +73,67 @@ $(function(){
     adjust2();
   });
 
+  /*-- モーダルウィンドウ_背景 --*/
+  if(!navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){
+    //Vocaloid Original
+    $('.lyric_guide').on('click',function(){
+      var lyric_ori = $('.lyric_guide');
+      var lyric_num = (lyric_ori.length -lyric_ori.index(this));
+      var lyric_num_comp = 'images/m_bg/bg' + lyric_num + '.jpg';
+      $('.modal_img_frame img').attr('src',lyric_num_comp);
+    });
+    //Vocaloid Arrange
+    $('.lyric_guide_ar').on('click',function(){
+      var lyric_ori_ar = $('.lyric_guide_ar');
+      var lyric_num_ar = (lyric_ori_ar.length -lyric_ori_ar.index(this));
+      var lyric_num_comp_ar = 'images/m_bg/bg_ar' + lyric_num_ar + '.jpg';
+      $('.modal_img_frame img').attr('src',lyric_num_comp_ar);
+    });
+    //Discography
+    $('#discography ul li').on('click',function(){
+      var disc_ori = $('#discography ul li');
+      var disc_num = (disc_ori.length -disc_ori.index(this));
+      var disc_num_comp = 'images/al' + disc_num + '.jpg';
+      $('.modal_img_frame2 img').attr('src',disc_num_comp);
+    });
+    //Participation
+    $('#participation ul li').on('click',function(){
+      var part_ori = $('#participation ul li');
+      var part_num = (part_ori.length -part_ori.index(this));
+      var part_num_comp = 'images/cm' + part_num + '.jpg';
+      $('.modal_img_frame2 img').attr('src',part_num_comp);
+    });
+  }
+  //Discography_中画像
+  $('#discography ul li').on('click',function(){
+    var disc_ori_in = $('#discography ul li');
+    var disc_num_in = (disc_ori_in.length -disc_ori_in.index(this));
+    var disc_num_in_comp = 'images/al' + disc_num_in + '.jpg';
+    $('.al_box_img').attr('src',disc_num_in_comp);
+  });
+  //Participation_中画像
+  $('#participation ul li').on('click',function(){
+    var part_ori_in = $('#participation ul li');
+    var part_num_in = (part_ori_in.length -part_ori_in.index(this));
+    var part_num_in_comp = 'images/cm' + part_num_in + '.jpg';
+    $('.al_box_img').attr('src',part_num_in_comp);
+  });
+
+  /*-- モーダルウィンドウ_背景固定 --*/
+  var current_scrollY;
+  $(".inline").on('click',function(){
+    current_scrollY = $( window ).scrollTop();
+    $('body').css({
+      position: 'fixed',
+      width: '100%',
+      top: -1 * current_scrollY
+    });
+  });
+  $("#cboxOverlay, .cbox_close, .cbox_close_2, .modal_img_frame, .modal_img_frame2").on('click',function(){
+    $('body').attr({style: ''});
+    $('html, body').prop({scrollTop: current_scrollY});
+  });
+
   /*-- スムーズスクロール --*/
   $(".scroll").on('click',function(event){
     event.preventDefault();
@@ -133,53 +194,6 @@ $(function(){
         $(audio_space).removeClass('audio_space_op');
       }
     }
-  });
-　
-  /*-- colorbox時の背景 --*/
-  if(!navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){
-    //Vocaloid Original
-    $('.lyric_guide').on('click',function(){
-      var lyric_ori = $('.lyric_guide');
-      var lyric_num = (lyric_ori.length -lyric_ori.index(this));
-      var lyric_num_in = 'images/m_bg/bg' + lyric_num + '.jpg';
-      $('.modal_img_frame img').attr('src',lyric_num_in);
-    });
-    //Vocaloid Arrange
-    $('.lyric_guide_ar').on('click',function(){
-      var lyric_ori_ar = $('.lyric_guide_ar');
-      var lyric_num_ar = (lyric_ori_ar.length -lyric_ori_ar.index(this));
-      var lyric_num_in_ar = 'images/m_bg/bg_ar' + lyric_num_ar + '.jpg';
-      $('.modal_img_frame img').attr('src',lyric_num_in_ar);
-    });
-    //Discography
-    $('#discography ul li').on('click',function(){
-      var disc_ori = $('#discography ul li');
-      var disc_num = (disc_ori.length -disc_ori.index(this));
-      var disc_num_in = 'images/al' + disc_num + '.jpg';
-      $('.modal_img_frame2 img').attr('src',disc_num_in);
-    });
-    //Participation
-    $('#participation ul li').on('click',function(){
-      var part_ori = $('#participation ul li');
-      var part_num = (part_ori.length -part_ori.index(this));
-      var part_num_in = 'images/cm' + part_num + '.jpg';
-      $('.modal_img_frame2 img').attr('src',part_num_in);
-    });
-  }
-
-  /*-- colorbox時の背景固定 --*/
-  var current_scrollY;
-  $(".inline").on('click',function(){
-    current_scrollY = $( window ).scrollTop();
-    $('body').css({
-      position: 'fixed',
-      width: '100%',
-      top: -1 * current_scrollY
-    });
-  });
-  $("#cboxOverlay, .cbox_close, .cbox_close_2, .modal_img_frame, .modal_img_frame2").on('click',function(){
-    $('body').attr({style: ''});
-    $('html, body').prop({scrollTop: current_scrollY});
   });
 
   /*-- パララックス --*/
