@@ -207,7 +207,7 @@ $(function(){
       target1.css('background-position','center top');
     }
     if(scrollY > scrollYStart2){
-      target2.css('background-position-y', (scrollY - targetPosOT2) * targetFactor + 'px');
+      target2.css('background-position-y', (scrollY - targetPosOT2 - '250') * targetFactor + 'px');
     }else{
       target2.css('background-position','center top');
     }
