@@ -924,6 +924,7 @@ nav ul li .active:after{
 	padding: 6px 0 4px 0;
 	border: 1px solid #999;
 	transition: all 0.3s ease;
+	position: relative;
 }
 .al_box_under a:active{
 	background-color: #53c6d6;
@@ -1007,14 +1008,14 @@ nav ul li .active:after{
 }
 .al_box_under a:after{
 	content: "";
-	display: inline-block;
+	position: absolute;
+	bottom: 2px;
+	right: 2px;
 	width: 9px;
 	height: 9px;
 	background: url("images/w_open2.png") no-repeat;
 	background-size: contain;
-	margin: 10px 2px -10px -13px;
 	opacity: 0.3;
-	float: right;
 }
 
 

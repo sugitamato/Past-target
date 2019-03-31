@@ -123,9 +123,9 @@ $(function(){
   var audio_space = $('#audio_space');
   $(window).scroll(function(){
     if ($(window).scrollTop() > 50){
-      $(topBtn).addClass('top_back_op');
-      $(side).addClass('side_op');
-      $(audio_space).addClass('audio_space_op');
+      $(topBtn).addClass('top_back_op');//TOPに戻る
+      $(side).addClass('side_op');//画面枠_横
+      $(audio_space).addClass('audio_space_op');//画面枠_下
     }else{
       $(topBtn).removeClass('top_back_op');
       $(side).removeClass('side_op');
@@ -134,7 +134,16 @@ $(function(){
       }
     }
   });
-
+　
+  /*-- colorbox時の背景 --*/
+  if(!navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){
+    $('.lyric_guide').on('click',function(){
+      var lyric_ori = $('.lyric_guide');
+      var lyric_num = (lyric_ori.length -lyric_ori.index(this));
+      var lyric_num_in = 'images/m_bg/bg' + lyric_num + '.jpg';
+      $('.modal_img_frame img').attr('src',lyric_num_in);
+    });
+  }
   /*-- colorbox時の背景固定 --*/
   var current_scrollY;
   $(".inline").on('click',function(){

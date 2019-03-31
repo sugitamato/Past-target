@@ -1085,6 +1085,7 @@ nav ul li a:hover{
 	margin: 25px 2px 0 2px;
 	padding: 7px 0 6px 0;
 	border: 1px solid #999;
+	position: relative;
 }
 .al_box_under a:hover{
 	background-color: #53c6d6;
@@ -1165,14 +1166,14 @@ nav ul li a:hover{
 }
 .al_box_under a:after{
 	content: "";
-	display: inline-block;
+	position: absolute;
+	bottom: 2px;
+	right: 2px;
 	width: 9px;
 	height: 9px;
 	background: url("images/w_open2.png") no-repeat;
 	background-size: contain;
-	margin: 15px 2px -16px -11px;
 	opacity: 0.3;
-	float: right;
 }
 
 
