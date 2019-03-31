@@ -137,13 +137,36 @@ $(function(){
 　
   /*-- colorbox時の背景 --*/
   if(!navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){
+    //Vocaloid Original
     $('.lyric_guide').on('click',function(){
       var lyric_ori = $('.lyric_guide');
       var lyric_num = (lyric_ori.length -lyric_ori.index(this));
       var lyric_num_in = 'images/m_bg/bg' + lyric_num + '.jpg';
       $('.modal_img_frame img').attr('src',lyric_num_in);
     });
+    //Vocaloid Arrange
+    $('.lyric_guide_ar').on('click',function(){
+      var lyric_ori_ar = $('.lyric_guide_ar');
+      var lyric_num_ar = (lyric_ori_ar.length -lyric_ori_ar.index(this));
+      var lyric_num_in_ar = 'images/m_bg/bg_ar' + lyric_num_ar + '.jpg';
+      $('.modal_img_frame img').attr('src',lyric_num_in_ar);
+    });
+    //Discography
+    $('#participation ul li').on('click',function(){
+      var disc_ori = $('#discography ul li');
+      var disc_num = (disc_ori.length -disc_ori.index(this));
+      var disc_num_in = 'images/al' + disc_num + '.jpg';
+      $('.modal_img_frame2 img').attr('src',disc_num_in);
+    });
+    //Participation
+    $('#participation ul li').on('click',function(){
+      var part_ori = $('#participation ul li');
+      var part_num = (part_ori.length -part_ori.index(this));
+      var part_num_in = 'images/cm' + part_num + '.jpg';
+      $('.modal_img_frame2 img').attr('src',part_num_in);
+    });
   }
+
   /*-- colorbox時の背景固定 --*/
   var current_scrollY;
   $(".inline").on('click',function(){
