@@ -285,10 +285,10 @@ h3{
 
 section{
 	padding-top: 45px !important;
-	padding-bottom: 50px !important; 
+	padding-bottom: 50px !important;
 }
 section:last-child{
-	padding-bottom: 70px !important; 
+	padding-bottom: 70px !important;
 }
 
 /*-- ページ内リンクのずれ対策 --*/
@@ -621,7 +621,7 @@ nav ul li .active:after{
 	margin: -2px 8px 0 10px;
 	width: 18px;
 	height: 18px;
-	background: url("images/m_icon_4.png") no-repeat; 
+	background: url("images/m_icon_4.png") no-repeat;
 	background-size: contain;
 }
 

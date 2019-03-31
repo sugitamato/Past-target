@@ -117,20 +117,28 @@ $(function(){
   }
   scrollMenu();
 
-  /*-- TOPに戻るフェード --*/
-  var topBtn = $('#top_back_fix');    
+  /*-- TOPに戻る & 画面枠フェード --*/
+  var topBtn = $('#top_back_fix');
+  var side = $('body');
+  var audio_space = $('#audio_space');
   $(window).scroll(function(){
-    if ($(window).scrollTop() > 100){
+    if ($(window).scrollTop() > 50){
       $(topBtn).addClass('top_back_op');
+      $(side).addClass('side_op');
+      $(audio_space).addClass('audio_space_op');
     }else{
       $(topBtn).removeClass('top_back_op');
+      $(side).removeClass('side_op');
+      if(!$('#audio_space_in').hasClass('audio_op')){
+        $(audio_space).removeClass('audio_space_op');
+      }
     }
   });
 
   /*-- colorbox時の背景固定 --*/
   var current_scrollY;
   $(".inline").on('click',function(){
-    current_scrollY = $( window ).scrollTop(); 
+    current_scrollY = $( window ).scrollTop();
     $('body').css({
       position: 'fixed',
       width: '100%',
