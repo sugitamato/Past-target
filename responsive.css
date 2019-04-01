@@ -19,48 +19,6 @@
 }
 
 
-/*========================== music ==========================*/
-/*-- アイコン説明部分 --*/
-#m_desc li{
-	position: relative;
-	display: inline-block;
-	font-size: 11px;
-	padding: 0 0 0 25px;
-	height: 32px;
-	line-height: 33px;
-	text-align: left;
-}
-#m_desc li:nth-child(1),
-#m_desc li:nth-child(2){
-	margin: 2px 0 0 0;
-}
-#m_desc li:nth-child(4),
-#m_desc li:nth-child(5){
-	margin: 0 0 3px 0;
-}
-
-/*-- 脚注 --*/
-.cap_flame{
-	width: 420px !important;
-	margin: 0 auto;
-}
-
-
-/*========================== discography、participation ==========================*/
-#discography:before,
-#participation:before{
-	padding-bottom: 810px;
-}
-
-/*-- 背景の図 --*/
-.back_drawing{
-	margin: 20px 0 0 0;
-}
-.back_drawing_2{
-	margin: 50px 0 0 0;
-}
-
-
 /*========================== about ==========================*/
 #about_left{
 	width: 49%;
@@ -727,45 +685,6 @@ nav ul li .active:after{
 .cbox_close,
 .cbox_close_2{
 	line-height: 31px !important;
-}
-.cbox_prev{
-	width: 60px !important;
-	font-size: 25px !important;
-	margin: 0 0 0 32% !important;
-	padding: 9% 0 !important;
-	right: 0px !important;
-	top: 45.5% !important;
-}
-.cbox_prev:after{
-	top: 40% !important;
-	right: 27% !important;
-	opacity: 0.15 !important;
-}
-.cbox_prev:hover:after{
-	border-top: solid 2px #000 !important;
-	border-right: solid 2px #000 !important;
-	opacity: 0.15 !important;
-}
-.cbox_next{
-	width: 60px !important;
-	font-size: 25px !important;
-	margin: 0 0 0 0 !important;
-	padding: 9% 0 !important;
-	left: 0 !important;
-	top: 45.5% !important;
-}
-.cbox_next:after{
-	top: 40% !important;
-	right: 29% !important;
-	opacity: 0.15 !important;
-}
-.cbox_next:hover:after{
-	border-top: solid 2px #000 !important;
-	border-right: solid 2px #000 !important;
-	opacity: 0.15 !important;
-}
-.cbox_close,
-.cbox_close_2{
     opacity: 0.2 !important;
     border: 1px solid #000 !important;
 }
