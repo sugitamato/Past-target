@@ -5,8 +5,12 @@
 /*--　h2 h3 menu　--*/
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:600);
 /*--　all　--*/
-@import url('https://fonts.googleapis.com/css?family=Sawarabi+Gothic');
-
+@font-face{
+	font-family: 'Sawarabi Gothic';
+	font-style: normal;
+	src: url('fonts/SawarabiGothic-Regular.ttf') format('truetype');
+	font-display: swap;
+}
 
 /*---------------------------------------------------------------
 　　　PC layout
