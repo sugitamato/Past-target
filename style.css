@@ -1,9 +1,25 @@
 @charset "utf-8";
 
+
+/*---------------------------------------------------------------
+　　　Font
+---------------------------------------------------------------*/
 /*--　h1　--*/
-@import url('https://fonts.googleapis.com/css?family=Changa:200');
+@font-face{
+	font-family: 'Changa';
+	font-weight: 200;
+	font-style: normal;
+	src: url('fonts/Changa-ExtraLight.ttf') format('truetype');
+	font-display: swap;
+}
 /*--　h2 h3 menu　--*/
-@import url(https://fonts.googleapis.com/css?family=Titillium+Web:600);
+@font-face{
+	font-family: 'Titillium Web';
+	font-weight: 600;
+	font-style: normal;
+	src: url('fonts/TitilliumWeb-SemiBold.ttf') format('truetype');
+	font-display: swap;
+}
 /*--　all　--*/
 @font-face{
 	font-family: 'Sawarabi Gothic';
