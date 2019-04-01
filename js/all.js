@@ -93,14 +93,14 @@ $(function(){
     $('#discography ul li').on('click',function(){
       var disc_ori = $('#discography ul li');
       var disc_num = (disc_ori.length -disc_ori.index(this));
-      var disc_num_comp = 'images/al' + disc_num + '.jpg';
+      var disc_num_comp = 'images/al.cm_thum/al' + disc_num + '.jpg';
       $('.modal_img_frame2 img').attr('src',disc_num_comp);
     });
     //Participation
     $('#participation ul li').on('click',function(){
       var part_ori = $('#participation ul li');
       var part_num = (part_ori.length -part_ori.index(this));
-      var part_num_comp = 'images/cm' + part_num + '.jpg';
+      var part_num_comp = 'images/al.cm_thum/cm' + part_num + '.jpg';
       $('.modal_img_frame2 img').attr('src',part_num_comp);
     });
   }
@@ -108,14 +108,14 @@ $(function(){
   $('#discography ul li').on('click',function(){
     var disc_ori_in = $('#discography ul li');
     var disc_num_in = (disc_ori_in.length -disc_ori_in.index(this));
-    var disc_num_in_comp = 'images/al' + disc_num_in + '.jpg';
+    var disc_num_in_comp = 'images/al.cm_thum/al' + disc_num_in + '.jpg';
     $('.al_box_img').attr('src',disc_num_in_comp);
   });
   //Participation_中画像
   $('#participation ul li').on('click',function(){
     var part_ori_in = $('#participation ul li');
     var part_num_in = (part_ori_in.length -part_ori_in.index(this));
-    var part_num_in_comp = 'images/cm' + part_num_in + '.jpg';
+    var part_num_in_comp = 'images/al.cm_thum/cm' + part_num_in + '.jpg';
     $('.al_box_img').attr('src',part_num_in_comp);
   });
 
