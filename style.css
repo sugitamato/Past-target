@@ -996,6 +996,12 @@ nav ul li a:hover{
 	background-position: center bottom;
 	background-size: cover;
 }
+#discography{
+	background-image: url('images/back.jpg');
+}
+#participation{
+	background-image: url('images/back_2.png');
+}
 #discography h2,
 #participation h2{
 	margin-bottom: 110px;
