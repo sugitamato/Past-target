@@ -753,6 +753,12 @@ nav ul li .active:after{
 	width: 100%;
 	margin: 0 auto;
 }
+#discography{
+	background-image: url('images/back.jpg');
+}
+#participation{
+	background-image: url('images/back_2.png');
+}
 /*-- パララックス背景 --*/
 .parallax{
 	background-repeat: no-repeat;
