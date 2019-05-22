@@ -20,8 +20,7 @@ $(function(){
       'header': 0,
       '#link_1': 0,
       '#link_2': 0,
-      '#link_3': 0,
-      '#link_4': 0
+      '#link_3': 0
     };
     var $globalNavi = new Array();
     for (var key in array){
@@ -122,13 +121,6 @@ $(function(){
       var disc_num_comp = 'images/al.cm_thum/al' + disc_num + '.jpg';
       $('.modal_img_frame2 img').attr('src',disc_num_comp);
     });
-    //Participation
-    $('#participation ul li').on('click',function(){
-      var part_ori = $('#participation ul li');
-      var part_num = (part_ori.length -part_ori.index(this));
-      var part_num_comp = 'images/al.cm_thum/cm' + part_num + '.jpg';
-      $('.modal_img_frame2 img').attr('src',part_num_comp);
-    });
   }
 
   $.when(
@@ -138,13 +130,6 @@ $(function(){
       var disc_num_in = (disc_ori_in.length -disc_ori_in.index(this));
       var disc_num_in_comp = 'images/al.cm_thum/al' + disc_num_in + '.jpg';
       $('.al_box_img').attr('src',disc_num_in_comp);
-    }),
-    //Participation_中画像
-    $('#participation ul li').on('click',function(){
-      var part_ori_in = $('#participation ul li');
-      var part_num_in = (part_ori_in.length -part_ori_in.index(this));
-      var part_num_in_comp = 'images/al.cm_thum/cm' + part_num_in + '.jpg';
-      $('.al_box_img').attr('src',part_num_in_comp);
     })
   ).done(function() {
     /*-- モーダルウィンドウ設定 --*/
@@ -205,13 +190,10 @@ $(function(){
   var targetPosOT_top = target_top.offset().top;
   var target1 = $("#discography");
   var targetPosOT1 = target1.offset().top;
-  var target2 = $("#participation");
-  var targetPosOT2 = target2.offset().top;
   var targetFactor = 0.5;
   var windowH = $(window).height();
   var scrollYStart_top = targetPosOT_top;
   var scrollYStart1 = targetPosOT1 - windowH - '80';
-  var scrollYStart2 = targetPosOT2 - windowH - '80';
   $(window).on('scroll',function(){
     var scrollY = $(this).scrollTop();
     if(scrollY > scrollYStart_top){
@@ -223,11 +205,6 @@ $(function(){
       target1.css('background-position-y', (scrollY - targetPosOT1 - '-30') * targetFactor + 'px');
     }else{
       target1.css('background-position','center top');
-    }
-    if(scrollY > scrollYStart2){
-      target2.css('background-position-y', (scrollY - targetPosOT2 - '250') * targetFactor + 'px');
-    }else{
-      target2.css('background-position','center top');
     }
   });
 

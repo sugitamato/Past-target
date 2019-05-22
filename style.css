@@ -983,9 +983,8 @@ nav ul li a:hover{
 }
 
 
-/*========================== discography、participation ==========================*/
-#discography,
-#participation{
+/*========================== discography ==========================*/
+#discography{
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;
@@ -999,11 +998,7 @@ nav ul li a:hover{
 #discography{
 	background-image: url('images/back.jpg');
 }
-#participation{
-	background-image: url('images/back_2.png');
-}
-#discography h2,
-#participation h2{
+#discography h2{
 	margin-bottom: 110px;
 }
 
@@ -1652,7 +1647,7 @@ h3.delighter.started{
 	opacity: 1;
 }
 
-/*-- Discography,participationスタイル --*/
+/*-- Discographyスタイル --*/
 .disc_fig4.delighter,
 .disc_fig3.delighter,
 .disc_fig2.delighter,

@@ -747,17 +747,13 @@ nav ul li .active:after{
 }
 
 
-/*========================== discography、participation ==========================*/
-#discography,
-#participation{
+/*========================== discography ==========================*/
+#discography{
 	width: 100%;
 	margin: 0 auto;
 }
 #discography{
 	background-image: url('images/back.jpg');
-}
-#participation{
-	background-image: url('images/back_2.png');
 }
 /*-- パララックス背景 --*/
 .parallax{
