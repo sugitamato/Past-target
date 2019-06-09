@@ -10,7 +10,7 @@
 
 /*============================ info ============================*/
 #info_box{
-	width: 480px;
+	width: 90%;
 }
 
 /*-- info タイトル --*/
@@ -130,7 +130,7 @@ a{
 }
 
 h1{
-	font-size: 17px;
+	font-size: 22px;
 	letter-spacing: 1.8px;
 	color: #fff;
 	font-family: 'Changa', sans-serif;
@@ -140,41 +140,25 @@ h1{
 	right: 0;
 	margin: auto;
 	font-weight: normal;
-	margin: 25px 0 0 0;
-	opacity: 0;
+	margin: 45px 0 0 0;
 	z-index: 1;
 }
 h1:before{
 	content: "　";
 	position: absolute;
-	top: -45px;
+	top: -40px;
 	left: 50%;
-	width: 26px;
-	height: 26px;
-	margin: 0 0 0 -13px;
-	background: url("images/logo.png") center center/26px 26px no-repeat;
-}
-h1:after{
-	content: "";
-	position: absolute;
-	width: 300px;
-	height: 200px;
-	background: rgba(255,255,255,0);
-	top: 50%;
-	left: 50%;
-	z-index: -1;
-	margin: -124px 0 0 -150px;
+	width: 28px;
+	height: 28px;
+	margin: 0 0 0 -20px;
+	background: url("images/logo.png") center center/28px 28px no-repeat;
 }
 h1 span{
 	display: block;
-	font-size: 11px;
+	font-size: 13px;
 	margin: 10px auto 0 auto;
-	color: #aaa;
+	color: #ccc;
 	letter-spacing: 1.5px;
-}
-.h1_op{
-	opacity: 1 !important;
-	transition: all  0.6s ease;
 }
 
 h2{
@@ -250,10 +234,7 @@ section:last-child{
 }
 
 /*-- ページ内リンクのずれ対策 --*/
-#link_1{
-	padding-top: 115px;
-	margin-top: -115px;
-}
+#link_1,
 #link_2,
 #link_3,
 #link_4{
@@ -263,8 +244,8 @@ section:last-child{
 #link_5,
 #link_6,
 #link_7{
-	padding-top: 100px;
-	margin-top: -100px;
+	padding-top: 50px;
+	margin-top: -50px;
 }
 
 /*-- float解除 --*/
@@ -281,8 +262,8 @@ section:last-child{
 header{
 	text-align: center;
 	margin: -50px 0 0 0;
-	height: 400px;
-	opacity: 0.8;
+	height: 250px;
+	opacity: 0.9;
 	z-index: -1;
 	position: relative;
 	display: flex;
@@ -295,171 +276,63 @@ header:after{
 	top: 0;
 	width: 100%;
 	height: 100%;
-	margin: -40px 0 0 0;
 	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAKElEQVQYV2NkwA7OMGIRP8PAwGCCLgEWBClGloALIkugCMIkMARBEgCeCgXTiftPxQAAAABJRU5ErkJggg==);
 }
-.parallax.bg_top{
-	background: url(images/top_img.png) center 25px/cover no-repeat;
-}
-
-/*-- mp4 --*/
-video{
-	display: none;
-}
-
-/*-- border_アニメ --*/
-.title_border{
-	width: 220px;
-	margin: auto;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	z-index: 1;
-	margin: -55px 0 0 -110px;
-}
-.title_border_in{
-	position: relative;
+#img_slide{
 	width: 100%;
-	height: 150px;
-}
-.title_border_in span{
-	position: absolute;
-}
-.title_border_in span:nth-child(1),
-.title_border_in span:nth-child(4){
-	top: 0;
-	background-color: #666;
-	transition: all .9s linear;
-}
-.title_border_in span:nth-child(3),
-.title_border_in span:nth-child(2){
-	left: 0;
-	background-color: #666;
-	transition: all .9s linear;
-}
-.title_border_in span:nth-child(1){
-	left: 0;
-	width: 0;
-	height: 2px;
-	transform-origin: left center;
-}
-.title_border_in span:nth-child(2){
-	top: 0;
-	width: 2px;
-	height: 100%;
-	transform-origin: center top;
-	transform: scaleY(0);
-}
-.title_border_in span:nth-child(3){
-	bottom: 0;
-	width: 0;
-	height: 2px;
-	transform-origin: left center;
-	transition-delay: .9s;
-}
-.title_border_in span:nth-child(4){
-	right: 0;
-	width: 2px;
-	height: 100%;
-	transform: scaleY(0);
-	transform-origin: center top;
-	transition-delay: .9s;
-}
-.active_border .title_border_in span:nth-child(3),
-.active_border .title_border_in span:nth-child(1){
-	width: 100%;
-}
-.active_border .title_border_in span:nth-child(4),
-.active_border .title_border_in span:nth-child(2){
-	transform: scaleY(1);
-}
-.active_border_op{
-	background: rgba(255,255,255,0.08);
-	transition: 0.4s;
-}
-
-/*-- トップ　スクロール案内 --*/
-.scroll_guide{
-	display: none;
+	height: 300px;
+	position: fixed !important;
 }
 
 
 /*============================ info ============================*/
 #info{
-	position: relative;
-	z-index: 5;
-	top: -75px;
-	right: 0;
-	left: 0;
-	margin: 30px 0 0 0;
 	width: 100%;
-	box-shadow: 0px 0px 5px rgba(0,0,0,0.4);
+	position: relative;
+	text-align: center;
+	z-index: 4;
+	background-color: #fff;
 }
 #info_box{
-	background-color: #fff;
-	height: 95px;
-	margin: 0 auto;
+	width: 90%;
+	height: 138px;
+	margin: 0 auto 30px auto;
 	color: #333;
 	overflow-x: hidden;
 	overflow-y: hidden;
 	font-size: 10px;
 	letter-spacing: 0px;
 	list-style: none;
-	padding: 5px 0;
+	padding: 10px 7px;
+	text-align: left;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
 }
 #info_box li{
-	padding: 12px 0 12px 5px;
-	border-bottom: 1px solid #e5e5e5;
+	padding: 14px 0 14px 0;
+	border-bottom: 1px solid #ccc;
 }
 #info_box li:first-child{
-	padding: 7px 0 12px 5px;
+	padding: 4px 0 14px 0;
 }
 #info_box li:last-child{
-	padding: 12px 0 8px 5px;
+	padding: 14px 0 4px 0;
 	border-bottom: none;
 }
 #info_box time{
 	background-color: #2e2e2e;
 	border-radius: 10px;
-	padding: 1px 8px 3px 8px;
-	margin: 0 7px 0 0;
+	padding: 2px 10px 3px 10px;
+	margin: 0 12px 0 0;
 	color: #ddd;
-	width: 100px;
 }
 #info_box a{
 	color: #333;
-	transition: all 0.3s ease;
 	border-bottom: 1px dashed #bbb;
 }
 #info_box a:active{
 	color: #53c6d6;
 	border-bottom: 1px dashed #53c6d6;
-}
-
-/*-- info タイトル --*/
-#info_title{
-	position: absolute;
-	z-index: -1;
-	top: 0;
-	left: 0;
-	right: 800px;
-	background-color: #2e2e2e;
-	width: 130px;
-	height: 120px;
-	margin: 0 auto;
-	font-weight: bold;
-	color: #fff;
-	font-size: 30px;
-}
-#info_title:before{
-	content: "Information";
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	color: #ddd;
-	font-size: 12px;
-	padding: 0 0 9px 21px;
-	letter-spacing: 2px;
 }
 
 
@@ -473,6 +346,10 @@ nav{
 	position: fixed;
 	font-family: 'Titillium Web';
 	box-shadow: 0px 0px 5px rgba(0,0,0,0.4);
+}
+#nav_logo_frame,
+.nav_link{
+	display: none;
 }
 nav ul{
 	text-align: center;
@@ -516,9 +393,8 @@ nav ul li .active:after{
 #music{
 	width: auto;
 	padding: 0 12px;
-	background-color: #fff;
+	background-color: #f3f3f3;
 	padding-top: 50px !important;
-	margin: -75px 0 0 0;
 	z-index: -1;
 }
 #music h2{
@@ -576,11 +452,9 @@ nav ul li .active:after{
 	vertical-align: middle;
 	position: relative;
 	left: 0;
-	margin: -2px 8px 0 10px;
+	margin: -2px 8px 0 -14px;
 	width: 18px;
 	height: 18px;
-	background: url("images/m_icon_4.png") no-repeat;
-	background-size: contain;
 }
 
 /*-- 曲名部分 --*/
@@ -1039,13 +913,13 @@ nav ul li .active:after{
 /*========================== footer ==========================*/
 footer{
 	width: 100%;
-	height: 175px;
+	height: 200px;
 	background: #2E2E2E;
 	text-align: center;
 	padding: 35px 0 20px 0;
 	position: relative;
 }
-footer a{
+footer > a{
 	display: inline-block;
 	margin: 0 4px;
 	border-radius: 30px;
@@ -1053,19 +927,165 @@ footer a{
 	background-color: #444;
 	transition: all 0.3s ease;
 }
-footer a:active{
+footer > a:active{
 	background-color: #53c6d6;
 	border: 2px solid #fff;
 }
-footer a img{
+footer > a img{
 	width: 26px;
 	height: 26px;
 	padding: 8px;
 }
-footer p{
+#footer_modaal{
+	margin: 0 0 30px 0;
+	font-size: 12px;
+	letter-spacing: 0.7px;
+	display: flex;
+	justify-content: center;
+}
+#footer_modaal a{
+	color: #888;
+	border-right: 1px solid #4a4a4a;
+	height: 12px;
+	padding: 2px 9px;
+	transition: all 0.3s ease;
+}
+#footer_modaal a:first-child{
+	border-left: 1px solid #4a4a4a;
+}
+#footer_modaal a:active{
+	color: #53c6d6;
+}
+#copyright{
+	width: 100%;
 	font-size: 11px;
 	color: #777;
-	margin: 55px 0 0 0;
+
+	position: absolute;
+
+
+	padding: 20px 0;
+	background-color: #1a1a1a;
+	bottom: 50px;
+}
+
+
+/*========================== madaal ==========================*/
+/*-- 基本レイアウト --*/
+.modaal_head{
+	width: 100%;
+	height: 70px;
+	background-color: #2e2e2e;
+	position: fixed;
+}
+.modaal_title{
+	color: #eee;
+	font-size: 18px;
+	text-align: center;
+	padding: 27px 0 0 0;
+	letter-spacing: 1.5px;
+}
+.modaal_inner{
+	padding: 100px 30px 30px 30px;
+}
+
+/*-- スクロールバー --*/
+.modaal_body::-webkit-scrollbar{
+    width: 5px;
+}
+.modaal_body::-webkit-scrollbar-track{
+    background:rgba(255,255,255,0);
+}
+.modaal_body::-webkit-scrollbar-thumb{
+    background: #999;
+    box-shadow: inset 0 0 2px #888;
+}
+
+/*-- About Site --*/
+.pol_title{
+	margin: 0 0 25px 0;
+	font-size: 18px;
+}
+.pol_text{
+	font-size: 12px;
+	letter-spacing: 0.8px;
+	line-height: 17px;
+	margin: 0 0 45px 15px;
+}
+.pol_text a{
+	border-bottom: 1px dashed #aaa;
+	color: #333;
+	transition: all 0.3s ease;
+}
+.pol_text a:active{
+	color: #53c6d6;
+	border-bottom: 1px dashed #53c6d6;
+}
+
+/*-- Contact --*/
+.con_title{
+	margin: 0 0 8px 0;
+	font-size: 16px;
+}
+.modaal_inner input[type="text"],
+.modaal_inner input[type="email"]{
+	margin: 0 0 30px 0;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 12px 15px;
+	border: 2px solid #e9e9e9;
+	background-color: #fcfcfc;
+	border-radius: 2px;
+	outline: none;
+	transition: all 0.3s ease;
+	letter-spacing: 1px;
+	font-family: sans-serif;
+}
+.modaal_inner input[type="text"]:focus,
+.modaal_inner input[type="email"]:focus{
+	border-color: #53c6d6;
+}
+.modaal_inner textarea{
+	margin: 0 0 30px 0;
+	width: 100%;
+	height: 120px;
+	box-sizing: border-box;
+	padding: 12px 15px;
+	border: 2px solid #e9e9e9;
+	background-color: #fcfcfc;
+	border-radius: 2px;
+	outline: none;
+	transition: all 0.3s ease;
+	letter-spacing: 1px;
+	font-family: sans-serif;
+}
+.modaal_inner textarea:focus{
+	border-color: #53c6d6;
+}
+.con_submit{
+	display: flex;
+	justify-content: center;
+}
+button{
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	padding: 0;
+	appearance: none;
+}
+.modaal_inner button{
+	border-radius: 5px;
+	padding: 10px 25px;
+	text-align: center;
+	border: 2px solid #53c6d6;
+	color: #53c6d6;
+	transition: all 0.3s ease;
+	font-size: 15px;
+}
+.modaal_inner button:active{
+	background-color: #53c6d6;
+	color: #fff;
 }
 
 
@@ -1081,18 +1101,12 @@ footer p{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	opacity: 0;
-	pointer-events: none;
 }
 #audio_space_in{
 	text-align: center;
 	width: 100%;
 	margin: 0 auto;
 	transition: all 0.5s ease;
-}
-.audio_op_sp{
-	opacity: 1 !important;
-	pointer-events: inherit !important;
 }
 #audio_title{
 	color: #fff;

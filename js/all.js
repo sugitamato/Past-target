@@ -1,4 +1,31 @@
 $(function(){
+  /*-- TOP画像スライド --*/
+  setTimeout(function(){
+  $('#img_slide').vegas({
+    slides: [
+      {src: 'images/top_img2.jpg'},
+      {src: 'images/top_img.jpg'}
+    ],
+      delay: 6000,
+      timer: false,
+      transitionDuration: 1000,
+      transition: 'blur',
+  });
+  },800);
+
+  /*-- navサイズ変更 --*/
+  var $win = $(window),
+    $header = $('nav'),
+    animationClass = 'is-animation';
+    $win.on('load scroll', function(){
+    var value = $(this).scrollTop();
+    if ( value > 100 ) {
+      $header.addClass(animationClass);
+    } else {
+      $header.removeClass(animationClass);
+    }
+  });
+
   /*-- スムーズスクロール --*/
   $(".scroll").on('click',function(event){
     event.preventDefault();
@@ -20,7 +47,8 @@ $(function(){
       'header': 0,
       '#link_1': 0,
       '#link_2': 0,
-      '#link_3': 0
+      '#link_3': 0,
+      '#link_4': 0
     };
     var $globalNavi = new Array();
     for (var key in array){
@@ -142,11 +170,11 @@ $(function(){
     });
   });
 
-  /*-- モーダルウィンドウ設定　（コンタクト用） --*/
+  /*-- モーダルウィンドウ設定（modaal） --*/
   $('.iframe').modaal({
     type:'iframe',
     width: 700,
-    height: 570,
+    height:600,
     background: '#fff',
     overlay_opacity: '0.8',
     overlay_close: false,
@@ -169,16 +197,13 @@ $(function(){
 
   /*-- TOPに戻る & 画面枠フェード --*/
   var topBtn = $('#top_back_fix');
-  var side = $('body');
   var audio_space = $('#audio_space');
   $(window).scroll(function(){
     if ($(window).scrollTop() > 50){
       $(topBtn).addClass('top_back_op');//TOPに戻る
-      $(side).addClass('side_op');//画面枠_横
       $(audio_space).addClass('audio_space_op');//画面枠_下
     }else{
       $(topBtn).removeClass('top_back_op');
-      $(side).removeClass('side_op');
       if(!$('#audio_space_in').hasClass('audio_op')){
         $(audio_space).removeClass('audio_space_op');
       }
@@ -186,21 +211,13 @@ $(function(){
   });
 
   /*-- パララックス --*/
-  var target_top = $(".parallax");
-  var targetPosOT_top = target_top.offset().top;
   var target1 = $("#discography");
   var targetPosOT1 = target1.offset().top;
   var targetFactor = 0.5;
   var windowH = $(window).height();
-  var scrollYStart_top = targetPosOT_top;
   var scrollYStart1 = targetPosOT1 - windowH - '80';
   $(window).on('scroll',function(){
     var scrollY = $(this).scrollTop();
-    if(scrollY > scrollYStart_top){
-      target_top.css('background-position-y', (scrollY - targetPosOT_top) * targetFactor + 'px');
-    }else{
-      target_top.css('background-position','center top');
-    }
     if(scrollY > scrollYStart1){
       target1.css('background-position-y', (scrollY - targetPosOT1 - '-30') * targetFactor + 'px');
     }else{
@@ -250,6 +267,9 @@ var wavesurfer = WaveSurfer.create({
 
 /*-- WaveSurfer --*/
 document.addEventListener('DOMContentLoaded', function(){
+
+  wavesurfer.load('https://dl.dropboxusercontent.com/s/sl80felytnydlxo/%E6%9E%B6%E7%A9%BA.mp3');//初期曲
+
   wavesurfer.on('ready', function(){
     var volume = "#volume";
     if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){
@@ -405,15 +425,3 @@ $('#volume').on('input change', function(){
     $(speaker).attr('src','images/audio_con/con_sp_50.png');
   }
 });
-
-/*-- タイトル　アニメ --*/
-$(window).on('load', function(){
-  $(".title_border").addClass("active_border");
-  $(".title_border").delay(1900).queue(function(){
-     $(this).addClass("active_border_op");
-     $("h1").addClass("h1_op");
-  });
-});
-
-/*-- パララックス --*/
-$(window).enllax();
