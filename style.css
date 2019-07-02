@@ -218,58 +218,6 @@ header{
 }
 
 
-/*============================ info ============================*/
-#info{
-	width: 100%;
-	position: relative;
-	text-align: center;
-	z-index: 4;
-	padding: 70px 0 150px 0;
-	background-color: #fff;
-}
-#info_box{
-	width: 960px;
-	height: 146px;
-	margin: 0 auto;
-	color: #333;
-	overflow-x: hidden;
-	overflow-y: hidden;
-	font-size: 10.5px;
-	letter-spacing: 0.8px;
-	list-style: none;
-	padding: 10px 7px;
-	text-align: left;
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
-}
-#info_box li{
-	padding: 15px 0 15px 10px;
-	border-bottom: 1px solid #ccc;
-}
-#info_box li:first-child{
-	padding: 6px 0 15px 10px;
-}
-#info_box li:last-child{
-	padding: 15px 0 6px 10px;
-	border-bottom: none;
-}
-#info_box time{
-	background-color: #2e2e2e;
-	border-radius: 10px;
-	padding: 2px 10px 3px 10px;
-	margin: 0 12px 0 0;
-	color: #ddd;
-}
-#info_box a{
-	color: #333;
-	border-bottom: 1px dashed #bbb;
-}
-#info_box a:hover{
-	color: #53c6d6;
-	border-bottom: 1px dashed #53c6d6;
-}
-
-
 /*============================ nav ============================*/
 nav{
 	width: 100%;
@@ -397,6 +345,71 @@ nav ul li a:hover{
 }
 
 
+/*============================ info ============================*/
+#info{
+	width: 100%;
+	position: relative;
+	text-align: center;
+	z-index: 4;
+	padding: 70px 0 150px 0;
+	background-color: #fff;
+}
+#info_box{
+	width: 960px;
+	height: 146px;
+	margin: 0 auto;
+	color: #333;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	font-size: 10.5px;
+	letter-spacing: 0.6px;
+	list-style: none;
+	padding: 10px 7px;
+	text-align: left;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+#info_box li{
+	padding: 15px 0 15px 10px;
+	border-bottom: 1px solid #ccc;
+}
+#info_box li:first-child{
+	padding: 6px 0 15px 10px;
+}
+#info_box li:last-child{
+	padding: 15px 0 6px 10px;
+	border-bottom: none;
+}
+#info_box time.old_info{
+	background-color: #2e2e2e;
+	border-radius: 10px;
+	padding: 2px 10px 3px 10px;
+	margin: 0 12px 0 0;
+	color: #ddd;
+}
+#info_box time.new_info{
+	background-color: #2e2e2e;
+	border-radius: 0 10px 10px 0;
+	padding: 2px 10px 3px 7px;
+	margin: 0 12px 0 0;
+	color: #ddd;
+}
+.new_icon{
+	background-color: #53c6d6;
+	padding: 2px 5px 3px 9px;
+	border-radius: 10px 0 0 10px;
+	color: #fff;
+}
+#info_box a{
+	color: #333;
+	border-bottom: 1px dashed #bbb;
+}
+#info_box a:hover{
+	color: #53c6d6;
+	border-bottom: 1px dashed #53c6d6;
+}
+
+
 /*========================== music ==========================*/
 #music{
 	width: 100%;
@@ -423,7 +436,7 @@ nav ul li a:hover{
 .music_frame_ar,
 .music_frame_in{
 	display: flex;
-	flex-wrap: wrap;
+	flex-flow: row wrap;
 	justify-content: center;
 	padding: 70px 0;
 }
@@ -461,6 +474,15 @@ nav ul li a:hover{
 }
 .music_frame_item:hover:before{
 	opacity: 0.2;
+}
+/*-- 最後尾左寄せ --*/
+.music_frame_item.is-empty,
+.music_frame_item_in.is-empty{
+	height: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 /*-- 曲頭アイコン部分 --*/
@@ -852,208 +874,151 @@ nav ul li a:hover{
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;
-	padding: 70px 0 170px 0;
+	padding: 70px 0 150px 0;
 	z-index: 1;
 	position: relative;
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	background-size: cover;
 	background-image: url('images/back.jpg');
+	background-attachment: fixed;
 }
-
-/*-- 中身 --*/
-.thum_flame{
+.disc_flame{
 	margin: 0 auto;
 	text-align: center;
-	font-size: 0;
-}
-.thum_flame li{
-	display: inline-block;
-	margin: 7px;
-}
-.thum_flame figure{
-	position: relative;
-	overflow: hidden;
-	box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
-	background-color: #fff;
-}
-.thum_flame img{
-	width: 180px;
-	height: 180px;
-	border: 6px solid #fff;
-	opacity: 0.8;
-}
-.thum_flame figcaption{
-	font-size: 13px;
-	letter-spacing: 1.5px;
-	line-height: 18px;
-	position: absolute;
-	margin: 6px 0 0 6px;
-	top: 0;
-	z-index: 2;
-	width: 180px;
-	height: 180px;
-	background: rgba(0,0,0,0.77);
-	transition: .4s;
-	opacity: 0;
 	display: flex;
-	border-radius: 110px;
+	justify-content: center;
+	flex-flow: row wrap;
 }
-.thum_flame figcaption p{
-	color: #fff;
-	flex: 0 1 auto;
-	margin: auto;
-	font-size: 13px;
+.disc_item{
+	list-style: none;
+	position: relative;
+	margin: 10px;
+	width: 480px;
+	background: rgba(255,255,255,0.7);
+	border-radius: 5px;
+	box-sizing: border-box;
+	padding: 15px;
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
-.thum_flame figcaption p span{
-	display: block;
-	font-size: 10px;
-	letter-spacing: 0;
-	line-height: 13px;
-	padding: 8px 0 0 0;
-	color: #aaa;
+.disc_item > img{
+	width: 190px;
+	height: 190px;
+	border: 6px solid #fff;
+	opacity: 0.9;
+	float: left;
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
-.thum_flame figure:hover figcaption{
-	opacity: 1;
-	top: 0;
-}
-.thum_flame figure:hover figcaption p{
-	opacity: 1;
-	bottom: 0;
+/*-- 最後尾左寄せ --*/
+.disc_item.is-empty{
+	height: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
-/*====== colorbox部分 ======*/
-.al_box_img{
-	float: left;
-	box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
-	margin: 0 20px 0 35px;
-	width: 200px;
-	border: 6px solid #fff;
-}
-.al_box_list{
+/*-- テキスト部分 --*/
+.disc_text{
 	float: left;
 	text-align: left;
-	font-size: 12px;
-	line-height: 18px;
-	white-space: normal;
-	width: 210px;
+	padding: 8px 0 5px 15px;
+	width: 200px;
 }
-.al_box_title{
-	display: block;
-	font-weight: bold;
+.disc_title{
 	font-size: 17px;
-	margin: 7px 0 5px 0;
+	margin: 0 0 5px 0;
 	color: #2E7DA1;
 	letter-spacing: 1.5px;
 }
-.al_box_date{
-	display: block;
+.disc_title span{
 	font-size: 10px;
-	margin: 0 0 14px 0;
+	letter-spacing: 0.3px;
+	margin: 0 0 0 10px;
+}
+.disc_date{
+	font-size: 10px;
+	margin: 0 0 12px 0;
 	color: #888;
 	letter-spacing: 0.5px;
 	line-height: 12.5px;
 }
-.al_box_under{
-	clear: both;
+.disc_text ol{
+	margin: 0 0 0 18px;
+	font-size: 12px;
+	line-height: 17px;
+	letter-spacing: 0.3px;
 }
-.al_box_under a{
-	display: inline-block;
-	width: 19.6%;
-	color: #333;
-	border-radius: 2px;
-	margin: 25px 2px 0 2px;
-	padding: 7px 0 6px 0;
-	border: 1px solid #999;
-	position: relative;
+
+/*-- リンク部分 --*/
+.disc_link{
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	width: 28px;
 }
-.al_box_under a:hover{
-	background-color: #53c6d6;
-	border: 1px solid #53c6d6;
-	color: #fff;
-}
-.al_box_none_off{
-	pointer-events: none;
-	background-color: #bbb !important;
-}
-.al_box_link{
-	border-bottom: 1px dashed #aaa;
-}
-.al_box_link:hover{
-	border-bottom: 1px dashed #53c6d6;
-}
-.al_box_link:after{
-	content: "";
-	display: inline-block;
-	width: 8px;
-	height: 8px;
-	background: url("images/w_open2.png") no-repeat;
-	background-size: contain;
-	margin: 0 0 -1px 5px;
-	opacity: 0.3;
+.disc_link a{
 	transition: all 0.3s ease;
+	opacity: 0.4;
 }
-.al_box_link:hover:after{
-	background: url("images/w_open3.png") no-repeat;
-	background-size: contain;
+.disc_link a img{
+	width: 28px;
+	height: 28px;
+	margin: 1px 0 0 0;
+}
+.disc_link a:hover{
 	opacity: 1;
 }
 
-/*-- リンク部分　アイコン --*/
-.al_box_under a:nth-child(1):before,
-.al_box_under a:nth-child(2):before,
-.al_box_under a:nth-child(3):before,
-.al_box_under a:nth-child(4):before{
-	content: "";
-	display: inline-block;
-	vertical-align: middle;
-	margin: -2px 2px -1px -9px;
-	width: 24px;
-	height: 23px;
+/*-- ツールチップ --*/
+.tooltip{
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+.tooltip p{
+    margin:0;
+    padding:0;
+}
+.description{
+    display: none;
+    position: absolute;
+    padding: 5px 5px 5px 5px;
+	font-size: 11px;
+	line-height: 18px;
+    color: #fff;
+	background: #2e2e2e;
+	width: 70px;
+	height: 18px;
 	transition: all 0.3s ease;
 }
-.al_box_under a:nth-child(1):before{
-	background: url("images/al_icon/al_box_icon_1.png") no-repeat;
-	background-size: contain;
-}
-.al_box_under a:nth-child(2):before{
-	background: url("images/al_icon/al_box_icon_2.png") no-repeat;
-	background-size: contain;
-}
-.al_box_under a:nth-child(3):before{
-	background: url("images/al_icon/al_box_icon_3.png") no-repeat;
-	background-size: contain;
-}
-.al_box_under a:nth-child(4):before{
-	background: url("images/al_icon/al_box_icon_4.png") no-repeat;
-	background-size: contain;
-}
-.al_box_under a:nth-child(1):hover:before{
-	background: url("images/al_icon/al_box_icon_1_h.png") no-repeat;
-	background-size: contain;
-}
-.al_box_under a:nth-child(2):hover:before{
-	background: url("images/al_icon/al_box_icon_2_h.png") no-repeat;
-	background-size: contain;
-}
-.al_box_under a:nth-child(3):hover:before{
-	background: url("images/al_icon/al_box_icon_3_h.png") no-repeat;
-	background-size: contain;
-}
-.al_box_under a:nth-child(4):hover:before{
-	background: url("images/al_icon/al_box_icon_4_h.png") no-repeat;
-	background-size: contain;
-}
-.al_box_under a:after{
+.description:after{
 	content: "";
-	position: absolute;
-	bottom: 2px;
-	right: 2px;
-	width: 9px;
-	height: 9px;
-	background: url("images/w_open2.png") no-repeat;
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	position: relative;
+	background-image: url('images/w_open.png');
 	background-size: contain;
-	opacity: 0.3;
+	background-repeat: no-repeat;
+	left: 2px;
+	bottom: -1px;
+	opacity: 0.7;
+}
+.description:before{
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 110px;
+    border: 8px solid transparent;
+    border-top: 8px solid #2e2e2e;
+    margin-left: -32px;
+    transform: rotateZ(270deg);
+}
+.tooltip:hover .description{
+    display: inline-block;
+    top: 0px;
+    left: -85px;
 }
 
 
@@ -1609,40 +1574,14 @@ h3.delighter.started{
 }
 
 /*-- Discographyスタイル --*/
-.disc_fig5.delighter,
-.disc_fig4.delighter,
-.disc_fig3.delighter,
-.disc_fig2.delighter,
-.disc_fig1.delighter{
+.disc_item.delighter{
+	transition: all 1s ease-out;
 	opacity: 0;
+	transform: translateY(50px);
 }
-.disc_fig5.delighter{
-	transition: all 0.5s ease-out;
-	transform: rotateY(200deg);
-}
-.disc_fig4.delighter{
-	transition: all 1.0s ease-out;
-	transform: rotateY(250deg);
-}
-.disc_fig3.delighter{
-	transition: all 1.5s ease-out;
-	transform: rotateY(300deg);
-}
-.disc_fig2.delighter{
-	transition: all 2.0s ease-out;
-	transform: rotateY(350deg);
-}
-.disc_fig1.delighter{
-	transition: all 2.5s ease-out;
-	transform: rotateY(400deg);
-}
-.disc_fig5.delighter.started,
-.disc_fig4.delighter.started,
-.disc_fig3.delighter.started,
-.disc_fig2.delighter.started,
-.disc_fig1.delighter.started{
+.disc_item.delighter.started{
 	opacity: 1;
-	transform: rotateY(0deg);
+	transform: translateY(0);
 }
 
 /*-- Aboutスタイル --*/

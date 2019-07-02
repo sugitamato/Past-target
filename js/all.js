@@ -1,31 +1,9 @@
 $(function(){
-  /*-- TOP画像スライド --*/
-  setTimeout(function(){
-  $('#img_slide').vegas({
-    slides: [
-      {src: 'images/top_img2.jpg'},
-      {src: 'images/top_img.jpg'}
-    ],
-      delay: 6000,
-      timer: false,
-      transitionDuration: 1000,
-      transition: 'blur',
-  });
-  },800);
+/*==============================================
 
-  /*-- navサイズ変更 --*/
-  var $win = $(window),
-    $header = $('nav'),
-    animationClass = 'is-animation';
-    $win.on('load scroll', function(){
-    var value = $(this).scrollTop();
-    if ( value > 100 ) {
-      $header.addClass(animationClass);
-    } else {
-      $header.removeClass(animationClass);
-    }
-  });
+　ページ共通要素
 
+===============================================*/
   /*-- スムーズスクロール --*/
   $(".scroll").on('click',function(event){
     event.preventDefault();
@@ -39,6 +17,16 @@ $(function(){
   $("#top_back, #top_back_fix").on('click',function(event){
     event.preventDefault();
     $('html, body').animate({scrollTop: 0}, 800);
+  });
+
+  /*-- TOPに戻る --*/
+  var topBtn = $('#top_back_fix');
+  $(window).scroll(function(){
+    if ($(window).scrollTop() > 50){
+      $(topBtn).addClass('top_back_op');
+    }else{
+      $(topBtn).removeClass('top_back_op');
+    }
   });
 
   /*-- カレント表示 --*/
@@ -70,7 +58,65 @@ $(function(){
   }
   scrollMenu();
 
-  /*-- モーダルウィンドウ　背景画像_各曲 --*/
+
+
+
+/*==============================================
+
+　TOP / nav / Update
+
+===============================================*/
+  /*-- TOP画像スライド --*/
+  setTimeout(function(){
+    $('#img_slide').vegas({
+      slides: [
+        {src: 'images/top_img2.jpg'},
+        {src: 'images/top_img.jpg'}
+      ],
+      delay: 6000,
+      timer: false,
+      transitionDuration: 1000,
+      transition: 'blur',
+    });
+  },800);
+
+  /*-- navサイズ変更 --*/
+  var $win = $(window),
+    $header = $('nav'),
+    animationClass = 'is-animation';
+    $win.on('load scroll', function(){
+    var value = $(this).scrollTop();
+    if ( value > 100 ) {
+      $header.addClass(animationClass);
+    } else {
+      $header.removeClass(animationClass);
+    }
+  });
+
+  /*-- スクロールバースタイル --*/
+  $('#info_box').mCustomScrollbar({
+    theme:'rounded-dots-dark',
+    setLeft: '5px',
+  });
+
+
+
+
+/*==============================================
+
+　Music List
+
+===============================================*/
+  /*-- モーダルウィンドウ設定 --*/
+  $('.inline').colorbox({
+    inline: true,
+    maxWidth: "94%",
+    maxHeight: "80%",
+    returnFocus: false,
+    opacity: 1,
+  });
+
+  /*-- モーダルウィンドウ_背景画像 --*/
   var bgImg = $('.modal_img_frame img');
   var bgWidth = 960;
   var bgHeight = 500;
@@ -95,38 +141,11 @@ $(function(){
       height: imgHeight
     })
   }
-  /*-- モーダルウィンドウ　背景画像_アルバム --*/
-  var bgImg2 = $('.modal_img_frame2 img');
-  var bgWidth2 = 250;
-  var bgHeight2 = 250;
-  function adjust2(){
-    var winWidth2 = $(window).width();
-    var winHeight2 = $(window).height();
-    var imgWidth2 = winWidth2;
-    var imgHeight2 = Math.floor(bgHeight2 * (winWidth2 / bgWidth2));
-    var imgTop2 = (winHeight2 - imgHeight2) / 2;
-    var imgLeft2 = 0;
-    if (imgHeight2 >= winHeight2){
-    }else{
-      imgHeight2 = winHeight2;
-      imgWidth2 = Math.floor(bgWidth2 * (winHeight2 / bgHeight2));
-      imgTop2 = 0;
-      imgLeft2 = (winWidth2 - imgWidth2) / 2;
-    }
-    bgImg2.css({
-      top: imgTop2,
-      left: imgLeft2,
-      width: imgWidth2,
-      height: imgHeight2
-    })
-  }
-  adjust2();
   $(window).on('load resize', function(){
     adjust();
-    adjust2();
   });
 
-  /*-- モーダルウィンドウ_背景 --*/
+  /*-- モーダルウィンドウ_背景軽量化表示 --*/
   if(!navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){
     //Vocaloid Original
     $('.lyric_guide').on('click',function(){
@@ -142,43 +161,7 @@ $(function(){
       var lyric_num_comp_ar = 'images/m_bg/bg_ar' + lyric_num_ar + '.jpg';
       $('.modal_img_frame img').attr('src',lyric_num_comp_ar);
     });
-    //Discography
-    $('#discography ul li').on('click',function(){
-      var disc_ori = $('#discography ul li');
-      var disc_num = (disc_ori.length -disc_ori.index(this));
-      var disc_num_comp = 'images/al.cm_thum/al' + disc_num + '.jpg';
-      $('.modal_img_frame2 img').attr('src',disc_num_comp);
-    });
   }
-
-  $.when(
-    //Discography_中画像
-    $('#discography ul li').on('click',function(){
-      var disc_ori_in = $('#discography ul li');
-      var disc_num_in = (disc_ori_in.length -disc_ori_in.index(this));
-      var disc_num_in_comp = 'images/al.cm_thum/al' + disc_num_in + '.jpg';
-      $('.al_box_img').attr('src',disc_num_in_comp);
-    })
-  ).done(function() {
-    /*-- モーダルウィンドウ設定 --*/
-    $('.inline').colorbox({
-      inline: true,
-      maxWidth: "94%",
-      maxHeight: "80%",
-      returnFocus: false,
-      opacity: 1,
-    });
-  });
-
-  /*-- モーダルウィンドウ設定（modaal） --*/
-  $('.iframe').modaal({
-    type:'iframe',
-    width: 700,
-    height:600,
-    background: '#fff',
-    overlay_opacity: '0.8',
-    overlay_close: false,
-  });
 
   /*-- モーダルウィンドウ_背景固定 --*/
   var current_scrollY;
@@ -195,43 +178,67 @@ $(function(){
     $('html, body').prop({scrollTop: current_scrollY});
   });
 
-  /*-- TOPに戻る & 画面枠フェード --*/
-  var topBtn = $('#top_back_fix');
-  var audio_space = $('#audio_space');
-  $(window).scroll(function(){
-    if ($(window).scrollTop() > 50){
-      $(topBtn).addClass('top_back_op');//TOPに戻る
-      $(audio_space).addClass('audio_space_op');//画面枠_下
-    }else{
-      $(topBtn).removeClass('top_back_op');
-      if(!$('#audio_space_in').hasClass('audio_op')){
-        $(audio_space).removeClass('audio_space_op');
-      }
-    }
+  /*-- flexbox最後尾左寄せ --*/
+  //Vocaloid Original
+  var $grid_m = $('.music_frame'),
+  emptyCells_m = [],i;
+  for (i = 0; i < $grid_m.find('.music_frame_item').length; i++){
+    emptyCells_m.push($('<div>', {class: 'music_frame_item is-empty'}));
+  }
+  $grid_m.append(emptyCells_m);
+  //nstrumental Original（6作品以上になったら）
+  /*
+  var $grid_m2 = $('.music_frame_in'),
+  emptyCells_m2 = [],i;
+  for (i = 0; i < $grid_m2.find('.music_frame_item_in').length; i++){
+    emptyCells_m2.push($('<div>', {class: 'music_frame_item_in is-empty'}));
+  }
+  $grid_m2.append(emptyCells_m2);
+  */
+
+
+
+
+/*==============================================
+
+　Discography
+
+===============================================*/
+  /*-- flexbox最後尾左寄せ --*/
+  var $grid_d = $('.disc_flame'),
+  emptyCells_d = [],i;
+  for (i = 0; i < $grid_d.find('.disc_item').length; i++){
+    emptyCells_d.push($('<li>', {class: 'disc_item is-empty'}));
+  }
+  $grid_d.append(emptyCells_d);
+
+
+
+
+/*==============================================
+
+　footer
+
+===============================================*/
+  /*-- モーダルウィンドウ設定 --*/
+  $('.iframe').modaal({
+    type:'iframe',
+    width: 700,
+    height:600,
+    background: '#fff',
+    overlay_opacity: '0.8',
+    overlay_close: false,
   });
 
-  /*-- パララックス --*/
-  var target1 = $("#discography");
-  var targetPosOT1 = target1.offset().top;
-  var targetFactor = 0.5;
-  var windowH = $(window).height();
-  var scrollYStart1 = targetPosOT1 - windowH - '80';
-  $(window).on('scroll',function(){
-    var scrollY = $(this).scrollTop();
-    if(scrollY > scrollYStart1){
-      target1.css('background-position-y', (scrollY - targetPosOT1 - '-30') * targetFactor + 'px');
-    }else{
-      target1.css('background-position','center top');
-    }
-  });
 
-  /*-- info_スクロールバースタイル --*/
-  $('#info_box').mCustomScrollbar({
-    theme:'rounded-dots-dark',
-    setLeft: '5px',
-  });
 
-  /*-- cookie保存 --*/
+
+/*==============================================
+
+　cookie
+
+===============================================*/
+  /*-- 保存 --*/
   $('#volume').on('mouseup', function(){
     Cookies.set('volumebar_cookie',vol_input.value,{ expires: 365 });
     Cookies.set('volume_cookie',wavesurfer.getVolume(),{ expires: 365 });
@@ -256,7 +263,15 @@ $(function(){
   }
 });
 
-/*-- WaveSurfer（プレーヤー設定） --*/
+
+
+
+/*==============================================
+
+　WaveSurfer（音楽再生プレーヤー）関連
+
+===============================================*/
+/*-- 基本設定 --*/
 var wavesurfer = WaveSurfer.create({
   container: '#waveform',
   height: '22',
