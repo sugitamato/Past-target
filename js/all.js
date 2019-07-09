@@ -70,12 +70,13 @@ $(function(){
   setTimeout(function(){
     $('#img_slide').vegas({
       slides: [
+        {src: 'images/top_img3.jpg'},
         {src: 'images/top_img2.jpg'},
         {src: 'images/top_img.jpg'}
       ],
-      delay: 6000,
+      delay: 5000,
       timer: false,
-      transitionDuration: 1000,
+      transitionDuration: 1200,
       transition: 'blur',
     });
   },800);

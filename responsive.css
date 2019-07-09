@@ -281,6 +281,7 @@ header:after{
 #img_slide{
 	width: 100%;
 	height: 300px;
+	top: 40px;
 	position: fixed !important;
 }
 
@@ -348,13 +349,13 @@ nav ul li .active:after{
 }
 #info_box{
 	width: 90%;
-	height: 138px;
+	height: 124px;
 	margin: 0 auto 30px auto;
 	color: #333;
 	overflow-x: hidden;
 	overflow-y: hidden;
 	font-size: 10px;
-	letter-spacing: 0px;
+	letter-spacing: -0.3px;
 	list-style: none;
 	padding: 10px 7px;
 	text-align: left;
@@ -377,14 +378,14 @@ nav ul li .active:after{
 	background-color: #2e2e2e;
 	border-radius: 10px;
 	padding: 2px 10px 3px 10px;
-	margin: 0 12px 0 0;
+	margin: 0 8px 0 0;
 	color: #ddd;
 }
 #info_box time.new_info{
 	background-color: #2e2e2e;
 	border-radius: 0 10px 10px 0;
 	padding: 2px 10px 3px 7px;
-	margin: 0 12px 0 0;
+	margin: 0 8px 0 0;
 	color: #ddd;
 }
 .new_icon{
@@ -866,13 +867,14 @@ nav ul li .active:after{
 	background: rgba(0,0,0,0.4);
 	width: 45px;
 	height: 45px;
-	bottom: 58px;
+	bottom: 56px;
 	right: 5px;
 	text-align: center;
 	border-radius: 50px;
 	cursor: pointer;
 	opacity: 0;
 	transition: all 0.3s ease;
+	z-index: 10;
 }
 #top_back_fix:active{
 	background: rgba(83,198,214,1);
@@ -941,10 +943,7 @@ footer > a img{
 	width: 100%;
 	font-size: 11px;
 	color: #777;
-
 	position: absolute;
-
-
 	padding: 20px 0;
 	background-color: #1a1a1a;
 	bottom: 50px;
