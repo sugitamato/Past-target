@@ -284,7 +284,7 @@ var wavesurfer = WaveSurfer.create({
 /*-- WaveSurfer --*/
 document.addEventListener('DOMContentLoaded', function(){
 
-  wavesurfer.load('https://dl.dropboxusercontent.com/s/sl80felytnydlxo/%E6%9E%B6%E7%A9%BA.mp3');//初期曲
+  wavesurfer.load('https://dl.dropboxusercontent.com/s/yqpbmzo4zlq4kcv/%E5%BE%92%E7%88%BE.mp3');//初期曲
 
   wavesurfer.on('ready', function(){
     var volume = "#volume";
