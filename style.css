@@ -58,7 +58,7 @@ h1{
 	color: #fff;
 	font-family: 'Changa', sans-serif;
 	position: absolute;
-	top: 52%;
+	top: 49%;
 	left: 0;
 	right: 0;
 	margin: auto;
@@ -199,7 +199,7 @@ header{
 	position: relative;
 	display: flex;
 	justify-content: center;
-	padding: 50px 0 0 0;
+	padding: 0 0 50px 0;
 }
 #img_slide:after{
 	content: "";
@@ -221,39 +221,17 @@ header{
 /*============================ nav ============================*/
 nav{
 	width: 100%;
-	height: 70px;
+	height: 80px;
 	top: 0;
 	z-index: 1000;
-	background-color: #fff;
 	position: fixed;
 	font-family: 'Titillium Web';
-	box-shadow: 0px -4px 7px rgba(0,0,0,0.7);
-	transition: all 0.3s ease;
-}
-#nav_logo_frame{
-	background-color: #444;
-	width: 70px;
-	height: 70px;
-	display: inline-block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	transition: all 0.3s ease;
-}
-#nav_logo_frame:hover{
-	background-color: #53c6d6;
-}
-#nav_logo{
-	position: absolute;
-	top: 15px;
-	left: 14px;
-	width: 40px;
-	transition: all 0.3s ease;
+	transition: all 0.5s ease;
 }
 nav ul{
 	text-align: center;
 	font-size: 0;
-	line-height: 70px;
+	line-height: 80px;
 }
 nav ul li{
 	display: inline-block;
@@ -261,7 +239,7 @@ nav ul li{
 nav ul li a{
 	margin: 0 35px;
 	font-size: 15px;
-	color: #777;
+	color: #bbb;
 	position: relative;
 	display: inline-block;
 }
@@ -275,7 +253,7 @@ nav ul li a:after{
 	background-color: #53c6d6;
 	transform: scale(0, 1);
 	transform-origin: right top;
-	transition: transform .3s;
+	transition: transform .5s;
 }
 nav ul li .active{
 	color: #53c6d6 !important;
@@ -291,14 +269,15 @@ nav ul li a:hover{
 /*-- 外部リンク --*/
 .nav_link{
 	float: right;
-	margin: -60px 15px 0 0;
+	top: 20px;
+	right: 20px;
+	position: absolute;
 }
 .nav_link > a{
 	display: inline-block;
-	margin: 0 4px;
+	margin: 0 5px;
 	border-radius: 30px;
-	background-color: #444;
-	transition: all 0.3s ease;
+	transition: all 0.5s ease;
 }
 .nav_link > a:hover{
 	background-color: #53c6d6;
@@ -307,22 +286,14 @@ nav ul li a:hover{
 	width: 21px;
 	height: 21px;
 	padding: 9px;
-	transition: all 0.3s ease;
+	transition: all 0.5s ease;
 }
 
 /*-- サイズ変化後 --*/
 .is-animation{
 	height: 50px;
-	background: rgba(255,255,255,0.9);
-}
-.is-animation #nav_logo_frame{
-	width: 50px;
-	height: 50px;
-}
-.is-animation #nav_logo{
-	top: 11px;
-	left: 10px;
-	width: 28px;
+	background: #fff;
+	box-shadow: 0px -4px 7px rgba(0,0,0,0.7);
 }
 .is-animation ul{
 	line-height: 50px;
@@ -330,13 +301,19 @@ nav ul li a:hover{
 .is-animation ul li a{
 	margin: 0 30px;
 	font-size: 13.5px;
+	color: #888;
 }
 .is-animation .nav_link{
-	margin: -46px 15px 0 0;
+	top: 9px;
+	right: 15px;
 }
 .is-animation .nav_link > a{
 	margin: 0 3px;
 	border-radius: 16px;
+	background-color: #444;
+}
+.is-animation .nav_link > a:hover{
+	background-color: #53c6d6;
 }
 .is-animation .nav_link > a img{
 	width: 16px;
@@ -948,6 +925,13 @@ nav ul li a:hover{
 	font-size: 12px;
 	line-height: 17px;
 	letter-spacing: 0.3px;
+}
+.disc_concept{
+	color: #888;
+	font-size: 10px;
+	letter-spacing: 0.2px;
+	position: absolute;
+	bottom: 25px;
 }
 
 /*-- リンク部分 --*/
@@ -1603,51 +1587,112 @@ h3.delighter.started{
 
 
 /*========================== サイト訪問時ロードアニメーション ==========================*/
-.shutter{
-	position:fixed;
-	top:0;
-	left:0;
-	right:0;
-	bottom:0;
-	background-color:#fff;
-	z-index:99999999;
-	-webkit-animation: byeShutter 2s forwards;
-	animation: byeShutter 2s forwards;
-}
-.shutter::before{
-	content: "";
-	position: absolute;
+.loadingAnim{
+	position: fixed;
+	z-index: 100001;
 	top: 0;
-	left: 0;
+	right: 0;
 	bottom: 0;
-	margin: auto;
-	background-color: #53c6d6;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+.loadingAnim:before,
+.loadingAnim:after{
+	line-height: 1;
+	position: fixed;
+	z-index: 99;
+	right: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 50%;
+	margin-right: auto;
+	margin-left: auto;
+	content: ' ';
+	transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;
+	transition-delay: .3s;
+	background-color: #2e2e2e;
+}
+.loadingAnim:before{
+	top: 0;
+}
+.loadingAnim:after{
+	bottom: 0;
+}
+.loaded .loadingAnim:before{
 	width: 0;
-	height: 1px;
-	-webkit-animation: shutterOpen 2s forwards;
-    animation: shutterOpen 2s forwards;
+	left: 100%;
+	-webkit-transform: translateX(0);
+	-ms-transform: translateX(0);
+	transform: translateX(0);
 }
-@keyframes byeShutter{
-	70%{
-	  opacity: 1;
-	}
-	100%{
-	  opacity: 0;
-	  display: none;
-	  z-index: -1;
-	}
+.loaded .loadingAnim:after{
+	width: 0;
+	right: 100%;
+	-webkit-transform: translateX(0);
+	-ms-transform: translateX(0);
+	transform: translateX(0);
 }
-@keyframes shutterOpen{
-	0%{
-	  width: 0;
-	  height: 2px;
-	}
-	50%{
-	  width: 100%;
-	  height: 2px;
-	}
-	100%{
-	  width: 100%;
-	  height: 100%;
-	}
+.loadingAnim_line{
+	line-height: 1;
+	position: fixed;
+	z-index: 101;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: inline-block;
+	overflow: hidden;
+	width: 160px;
+	height: 50px;
+	margin: auto;
+	transition: all .2s cubic-bezier(.785, .135, .15, .86) 0s;
+	transition-delay: .6s;
+	text-align: center;
+}
+.loaded .loadingAnim_line{
+	overflow: hidden;
+	height: 0;
+}
+/*-- プログレスバー --*/
+.loading_bar{
+    width: 0;
+	height: 2px;
+	margin: -1px 0 0 0;
+    background: #53c6d6;
+    position: relative;
+    top: 50%;
+	left: 0;
+	bottom: 50%;
+	transition: all 0.8s linear 0s;
+	z-index: 100;
+}
+.loaded .loading_bar{
+	opacity: 0;
+}
+/*-- SVGロゴ --*/
+#svg_logo{
+	z-index: 10000000;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100px;
+}
+.st0{
+	fill: none;
+	stroke: #777;
+}
+path{
+	fill-opacity: 0;
+	transition: fill-opacity 0.3s;
+}
+.loaded path{
+	opacity: 0;
+	transition: all 0.6s ease;
 }

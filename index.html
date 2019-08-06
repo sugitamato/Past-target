@@ -17,11 +17,25 @@
 </head>
 
 <body>
-  <div class="shutter"></div>
+  <div id="loadingAnim" class="loadingAnim">
+    <i class="loadingAnim_line"></i>
+    <div class="loading_bar"></div>
+    <svg version="1.1" id="svg_logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+    y="0px" viewBox="0 0 425.197 425.197" enable-background="new 0 0 425.197 425.197" xml:space="preserve">
+      <path class="st0" d="M360.615,30.528H64.568c-18.786,0-34.016,15.229-34.016,34.016v0.859h222.037
+      c-17.859,12.966-33.25,29.117-45.372,47.604H30.552v34.875h158.841c-5.646,14.847-9.393,30.628-10.959,47.047H30.552v34.875h147.882
+      c1.584,16.615,5.406,32.576,11.166,47.579H30.552v34.875h177.014c12.209,18.481,27.695,34.609,45.65,47.528H30.552v0.859
+      c0,18.786,15.229,34.016,34.016,34.016h296.047c18.786,0,34.016-15.229,34.016-34.016v-0.859v-4.693v-44.33V272.98V153.827v-37.783
+      v-45.94v-4.7v-0.859C394.63,45.758,379.401,30.528,360.615,30.528z M359.755,181.048c-15.809,1.685-28.125,15.062-28.125,31.318
+      c0,16.256,12.316,29.633,28.125,31.317v39.264c-0.35,0.006-0.696,0.019-1.047,0.019c-38.417,0-69.563-31.145-69.563-69.562
+      c0-38.418,31.146-69.563,69.563-69.563c0.351,0,0.697,0.013,1.047,0.018V181.048z M359.755,109.677
+      c-0.35-0.003-0.696-0.023-1.047-0.023c-57.299,0-103.75,46.451-103.75,103.75c0,57.299,46.451,103.75,103.75,103.75
+      c0.351,0,0.697-0.02,1.047-0.023v42.292c-0.22,0.001-0.437,0.01-0.656,0.01c-81.092,0-146.833-65.741-146.833-146.833
+      c0-81.094,65.741-146.834,146.833-146.834c0.22,0,0.437,0.009,0.656,0.01V109.677z"/>
+    </svg>
+  </div>
+
   <nav>
-    <a href="#nav_back" class="scroll" id="nav_logo_frame">
-      <img src="images/nav_logo.png" alt="ロゴ" id="nav_logo">
-    </a>
     <ul>
       <li><a href="#link_1" class="scroll">Update</a></li>
       <li><a href="#link_2" class="scroll">Music List</a></li>
@@ -29,10 +43,10 @@
       <li><a href="#link_4" class="scroll">About Me</a></li>
     </ul>
     <div class="nav_link clearfix">
-      <a href="https://soundcloud.com/mato_sugita" target="_blank"><img src="images/link/link_sc.png" alt="SoundCloud"></a>
-      <a href="http://www.nicovideo.jp/user/1649613" target="_blank"><img src="images/link/link_nico.png" alt="Niconico"></a>
-      <a href="https://sugitamato.official.ec/" target="_blank"><img src="images/link/link_base.png" alt="BASE"></a>
-      <a href="https://ux.getuploader.com/sugitamato/" target="_blank"><img src="images/link/link_dl.png" alt="uploader.jp"></a>
+      <a href="https://soundcloud.com/mato_sugita" target="_blank" title="SoundCloud"><img src="images/link/link_sc.png" alt="SoundCloud"></a>
+      <a href="http://www.nicovideo.jp/user/1649613" target="_blank" title="Niconico"><img src="images/link/link_nico.png" alt="Niconico"></a>
+      <a href="https://sugitamato.official.ec/" target="_blank" title="BASE"><img src="images/link/link_base.png" alt="BASE"></a>
+      <a href="https://ux.getuploader.com/sugitamato/" target="_blank" title="uploader.jp"><img src="images/link/link_dl.png" alt="uploader.jp"></a>
     </div>
   </nav>
 
@@ -3250,6 +3264,7 @@
               <li>月並み</li>
               <li>残響室</li>
             </ol>
+            <p class="disc_concept">Concept：昨今のネットの息苦しさ</p>
           </div>
           <div class="disc_link">
             <a href="https://ux.getuploader.com/sugitamato/download/45" target="_blank" class="tooltip">
@@ -3270,6 +3285,7 @@
               <li>たゆたうサカナ</li>
               <li>イーチアンサー</li>
             </ol>
+            <p class="disc_concept">Concept：人間同士の隔たり・違い</p>
           </div>
           <div class="disc_link">
             <a href="https://soundcloud.com/mato_sugita/sets/each" target="_blank" class="tooltip">
@@ -3294,6 +3310,7 @@
               <li>欠陥構造</li>
               <li>ナンバーレス</li>
             </ol>
+            <p class="disc_concept">Concept：嫌いなものごと</p>
           </div>
           <div class="disc_link">
             <a href="https://soundcloud.com/mato_sugita/sets/midnight" target="_blank" class="tooltip">
@@ -3405,10 +3422,10 @@
         <a href="./policy.html" class="iframe">About Site</a>
         <a href="./contact.html" class="iframe">Contact</a>
       </div>
-      <a href="https://soundcloud.com/mato_sugita" target="_blank"><img src="images/link/link_sc.png" alt="SoundCloud"></a>
-      <a href="http://www.nicovideo.jp/user/1649613" target="_blank"><img src="images/link/link_nico.png" alt="Niconico"></a>
-      <a href="https://sugitamato.official.ec/" target="_blank"><img src="images/link/link_base.png" alt="BASE"></a>
-      <a href="https://ux.getuploader.com/sugitamato/" target="_blank"><img src="images/link/link_dl.png" alt="uploader.jp"></a>
+      <a href="https://soundcloud.com/mato_sugita" target="_blank" title="SoundCloud"><img src="images/link/link_sc.png" alt="SoundCloud"></a>
+      <a href="http://www.nicovideo.jp/user/1649613" target="_blank" title="Niconico"><img src="images/link/link_nico.png" alt="Niconico"></a>
+      <a href="https://sugitamato.official.ec/" target="_blank" title="BASE"><img src="images/link/link_base.png" alt="BASE"></a>
+      <a href="https://ux.getuploader.com/sugitamato/" target="_blank" title="uploader.jp"><img src="images/link/link_dl.png" alt="uploader.jp"></a>
       <p id="copyright">© 2018<script>new Date().getFullYear()>2018&&document.write("-"+new Date().getFullYear());</script> Past target.</p>
     </footer>
   </article>

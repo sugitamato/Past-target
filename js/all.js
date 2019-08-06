@@ -1,9 +1,40 @@
-$(function(){
 /*==============================================
 
 　ページ共通要素
 
 ===============================================*/
+/*-- プログレスバー --*/
+var loadCount = 70,
+imgLength = $("img").size();
+$("img").each(function(){
+  var src = $(this).attr("src");
+  $("<img>")
+  .attr("src", src)
+  .load(function(){
+    loadCount++;
+  });
+});
+var timer = setInterval(function(){
+  $(".loading_bar").css({
+    "width": (loadCount / imgLength) * 100 + "%"
+  });
+});
+
+/*-- ローディングアニメーション --*/
+$(function(){
+  var $delayTime = 1000;
+  $(window).on('load', function(){
+    var $loadingAnim = $('#loadingAnim'),
+        $body = $('body');
+    setTimeout(function(){
+      $body.addClass('loaded');
+      //アニメ完了後にDOM削除
+      $loadingAnim.find('.loadingAnim_line').on('transitionend', function(e){
+        $(this).parent().remove();
+      });
+    }, $delayTime);
+  });
+
   /*-- スムーズスクロール --*/
   $(".scroll").on('click',function(event){
     event.preventDefault();
@@ -74,7 +105,7 @@ $(function(){
         {src: 'images/top_img2.jpg'},
         {src: 'images/top_img.jpg'}
       ],
-      delay: 5000,
+      delay: 4500,
       timer: false,
       transitionDuration: 1200,
       transition: 'blur',
@@ -87,7 +118,7 @@ $(function(){
     animationClass = 'is-animation';
     $win.on('load scroll', function(){
     var value = $(this).scrollTop();
-    if ( value > 100 ) {
+    if ( value > 1 ) {
       $header.addClass(animationClass);
     } else {
       $header.removeClass(animationClass);

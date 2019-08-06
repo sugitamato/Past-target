@@ -676,8 +676,8 @@ nav ul li .active:after{
 	box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 .disc_item > img{
-	width: 190px;
-	height: 190px;
+	width: 160px;
+	height: 160px;
 	border: 6px solid #fff;
 	opacity: 0.9;
 	float: left;
@@ -700,7 +700,7 @@ nav ul li .active:after{
 	width: 200px;
 }
 .disc_title{
-	font-size: 17px;
+	font-size: 16px;
 	margin: 0 0 5px 0;
 	color: #2E7DA1;
 	letter-spacing: 1.5px;
@@ -722,6 +722,13 @@ nav ul li .active:after{
 	font-size: 12px;
 	line-height: 17px;
 	letter-spacing: 0.3px;
+}
+.disc_concept{
+	color: #888;
+	font-size: 10px;
+	letter-spacing: 0.2px;
+	position: absolute;
+	bottom: 22px;
 }
 
 /*-- リンク部分 --*/
