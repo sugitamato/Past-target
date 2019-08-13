@@ -101,6 +101,7 @@ $(function(){
   setTimeout(function(){
     $('#img_slide').vegas({
       slides: [
+        //{src: 'images/top_img4.jpg'},
         {src: 'images/top_img3.jpg'},
         {src: 'images/top_img2.jpg'},
         {src: 'images/top_img.jpg'}
